@@ -1,4 +1,4 @@
-** A webshop with HTML, CSS and JS
+# A webshop with HTML, CSS and JS
 
 This was a school project where I created a web shop with HTML, CSS and JS. It is an online bookstore.
 
