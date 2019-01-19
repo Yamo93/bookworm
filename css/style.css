@@ -1,0 +1,818 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: #009966; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Nunito", sans-serif;
+  height: 100%; }
+
+.default-title {
+  font-size: 2.6rem;
+  font-family: "Titillium Web", sans-serif;
+  color: #003333;
+  padding-bottom: 2px;
+  position: relative;
+  width: 95px;
+  margin-bottom: 3rem; }
+  .default-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 2.5px solid #FF9933;
+    width: 100%; }
+
+.hero {
+  width: 100%;
+  max-height: 100vh;
+  min-height: 100%; }
+  .hero__infoarea {
+    width: 100%;
+    min-height: 60px;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF9933;
+    font-family: "Titillium Web", sans-serif; }
+    .hero__infoarea--title {
+      font-size: 2.5rem;
+      font-weight: 300;
+      text-transform: uppercase; }
+      .hero__infoarea--title span {
+        font-weight: 600; }
+  .hero__menu {
+    width: 100%;
+    min-height: 100%;
+    height: 30vh;
+    background-color: #F6F6F6;
+    padding: 1rem 3rem; }
+    .hero__menu-top {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 22vh;
+      width: 70%;
+      margin: 0 auto; }
+      .hero__menu-top--logo img {
+        width: 200px;
+        height: 100px;
+        background-color: #FEFEFE;
+        border: 1px solid #009966; }
+      .hero__menu-top input[type=search] {
+        width: 35%;
+        padding: 1.5rem 3rem;
+        border: none;
+        box-shadow: 0.5px 1px 1px rgba(0, 0, 0, 0.2);
+        font-family: inherit;
+        font-size: 1.6rem; }
+      .hero__menu-top--basket {
+        width: 130px;
+        height: 90px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        .hero__menu-top--basket .basket, .hero__menu-top--basket .heart {
+          cursor: pointer;
+          display: block;
+          width: 50px;
+          height: 50px; }
+    .hero__menu-bottom {
+      width: 100%;
+      height: 8vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; }
+      .hero__menu-bottom ul {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        margin: 0 auto; }
+        .hero__menu-bottom ul li a {
+          font-size: 2rem;
+          font-weight: 600;
+          color: #003333; }
+  .hero .gallery {
+    width: 100%;
+    height: 60vh;
+    background-image: url(../img/slidepics/slide1.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative; }
+    .hero .gallery__larr, .hero .gallery__rarr {
+      cursor: pointer;
+      width: 40px;
+      height: 60px;
+      padding: 15px;
+      background-color: #FEFEFE;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      font-weight: 600;
+      color: #009966;
+      position: absolute;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); }
+    .hero .gallery__larr {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%); }
+    .hero .gallery__rarr {
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%); }
+    .hero .gallery__switches {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 35px;
+      display: flex;
+      justify-content: space-between; }
+      .hero .gallery__switches .switch {
+        width: 15px;
+        height: 15px;
+        background-color: #FEFEFE;
+        border: 1px solid transparent;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); }
+      .hero .gallery__switches .switch:nth-child(3) {
+        background-color: black;
+        border: 1px solid #FEFEFE; }
+
+.about {
+  width: 100%;
+  height: 65vh;
+  min-height: 430px;
+  background-color: #F6F6F6;
+  padding: 3rem 16rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .about__left {
+    width: 35%; }
+    .about__left-title {
+      font-size: 2.6rem;
+      font-family: "Titillium Web", sans-serif;
+      color: #003333;
+      padding-bottom: 2px;
+      position: relative;
+      width: 105px;
+      margin-bottom: 3rem; }
+      .about__left-title::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-bottom: 2.5px solid #FF9933;
+        width: 100%; }
+    .about__left-para {
+      font-size: 2rem;
+      width: 400px; }
+  .about__right {
+    width: 35%; }
+    .about__right-box {
+      width: 350px;
+      height: 300px;
+      background-color: #FEFEFE;
+      box-shadow: 1.5px 2px 2px rgba(0, 0, 0, 0.2);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .about__right-box--title {
+        font-family: "Titillium Web", sans-serif;
+        width: 60%;
+        font-size: 2.6rem;
+        color: #003333;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px dotted rgba(0, 0, 0, 0.7);
+        margin-bottom: 1.5rem; }
+      .about__right-box--desc {
+        font-size: 2.6rem;
+        font-family: "Titillium Web", sans-serif;
+        font-weight: 600;
+        color: #009966; }
+        .about__right-box--desc span {
+          display: block;
+          color: #FF9933;
+          font-family: "Nunito", sans-serif;
+          font-size: 4.2rem;
+          font-weight: 300; }
+
+.newbooks {
+  width: 100%;
+  height: 70vh;
+  min-height: 450px;
+  padding: 3rem 16rem; }
+  .newbooks__title {
+    width: 240px; }
+  .newbooks__collection {
+    width: 100%;
+    height: 45vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; }
+    .newbooks__collection .book {
+      width: 20%;
+      height: 100%;
+      background-size: cover;
+      background-position: center; }
+    .newbooks__collection .book1 {
+      background-image: url(../img/products/book1_front.png); }
+    .newbooks__collection .book2 {
+      background-image: url(../img/products/book2_front.png); }
+    .newbooks__collection .book3 {
+      background-image: url(../img/products/book3_front.png); }
+    .newbooks__collection .book4 {
+      background-image: url(../img/products/book4_front.png); }
+    .newbooks__collection .larr, .newbooks__collection .rarr {
+      cursor: pointer;
+      position: absolute;
+      font-size: 25px;
+      color: #003333;
+      top: 40%;
+      transform: translateY(-50%);
+      transition: all .3s;
+      border-radius: 50%;
+      padding: 1.5rem; }
+    .newbooks__collection .larr {
+      left: -7rem; }
+      .newbooks__collection .larr:hover {
+        color: #FF3333; }
+    .newbooks__collection .rarr {
+      right: -7rem; }
+      .newbooks__collection .rarr:hover {
+        color: #FF3333; }
+
+.footer {
+  width: 100%;
+  height: 50vh;
+  padding: 4rem;
+  min-height: 300px;
+  background-color: #003333;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #FEFEFE;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; }
+  .footer__links {
+    width: 150px;
+    cursor: pointer; }
+  .footer__social {
+    width: 150px;
+    display: flex;
+    justify-content: space-between; }
+    .footer__social-icon {
+      cursor: pointer;
+      width: 40px;
+      height: 40px; }
+  .footer__copy {
+    color: #FF9933; }
+
+.products {
+  height: 100%; }
+  .products__collection {
+    height: 400px; }
+    .products__collection .product {
+      width: 20%; }
+      .products__collection .product__pic {
+        width: 100%;
+        height: 30vh;
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 1rem; }
+      .products__collection .product .pic1 {
+        background-image: url(../img/products/book1_front.png); }
+      .products__collection .product .pic2 {
+        background-image: url(../img/products/book2_front.png); }
+      .products__collection .product .pic3 {
+        background-image: url(../img/products/book3_front.png); }
+      .products__collection .product .pic4 {
+        background-image: url(../img/products/book4_front.png); }
+      .products__collection .product__title {
+        color: #003333;
+        font-weight: 600;
+        font-size: 1.8rem;
+        font-family: "Titillium Web", sans-serif;
+        margin-bottom: .2rem; }
+      .products__collection .product__author {
+        color: #003333;
+        font-size: 1.6rem;
+        margin-bottom: .2rem; }
+      .products__collection .product__price {
+        font-weight: 600;
+        font-family: "Titillium Web", sans-serif;
+        font-size: 1.8rem;
+        color: #FF3333;
+        margin-bottom: 1rem; }
+      .products__collection .product__btn {
+        border: 1px solid #FF9933;
+        background-color: #003333;
+        color: #FF9933;
+        padding: 1rem .5rem;
+        border-radius: 30px;
+        font-family: inherit;
+        width: 80%;
+        cursor: pointer;
+        transition: all .3s; }
+        .products__collection .product__btn:hover {
+          border: 1px solid #003333;
+          background-color: #FF9933;
+          color: #003333; }
+
+.basket {
+  width: 100%;
+  height: 100%;
+  padding: 5rem 8rem; }
+  .basket__title {
+    width: 150px; }
+  .basket .wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; }
+  .basket .product {
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.4); }
+  .basket__left {
+    width: 60%; }
+    .basket__left-topbar {
+      width: 100%;
+      display: flex;
+      padding: 1.5rem 0;
+      padding-right: 5%;
+      border-top: 1px dotted rgba(0, 0, 0, 0.4);
+      border-bottom: 1px dotted rgba(0, 0, 0, 0.4); }
+      .basket__left-topbar--proddesc, .basket__left-topbar--quantity, .basket__left-topbar--total {
+        font-size: 2rem;
+        font-family: "Titillium Web", sans-serif;
+        color: #003333; }
+      .basket__left-topbar--proddesc {
+        width: 70%; }
+      .basket__left-topbar--quantity {
+        width: 15%; }
+      .basket__left-topbar--total {
+        width: 15%; }
+    .basket__left-info {
+      width: 100%;
+      display: flex;
+      padding: 2rem 0;
+      padding-right: 5%; }
+      .basket__left-info--desc {
+        width: 70%; }
+        .basket__left-info--desc---title {
+          font-family: "Titillium Web", sans-serif;
+          font-size: 1.8rem;
+          color: #009966;
+          margin-bottom: 5px; }
+        .basket__left-info--desc---author {
+          font-family: "Titillium Web", sans-serif;
+          font-weight: 300;
+          font-size: 2rem;
+          color: #003333; }
+      .basket__left-info--quant {
+        width: 15%; }
+        .basket__left-info--quant .prod_quantity {
+          width: 60px;
+          height: 60px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 2.4rem;
+          font-family: inherit;
+          padding: 5px;
+          color: #003333; }
+      .basket__left-info--price {
+        width: 15%;
+        font-family: "Titillium Web", sans-serif;
+        font-size: 2.4rem;
+        font-weight: 600;
+        color: #003333; }
+    .basket__left-book {
+      width: 100%;
+      padding-right: 5%;
+      display: flex; }
+      .basket__left-book--img {
+        width: 30%;
+        height: 250px;
+        background-image: url(../img/products/book1_front.png);
+        background-size: cover;
+        background-position: center;
+        margin-right: 5%; }
+      .basket__left-book--details {
+        margin-top: 15px; }
+        .basket__left-book--details---skick, .basket__left-book--details---format, .basket__left-book--details---sidor, .basket__left-book--details---vikt, .basket__left-book--details---datum {
+          font-size: 1.6rem;
+          margin-bottom: 5px;
+          color: #003333; }
+          .basket__left-book--details---skick span, .basket__left-book--details---format span, .basket__left-book--details---sidor span, .basket__left-book--details---vikt span, .basket__left-book--details---datum span {
+            font-weight: 600; }
+        .basket__left-book--details---desc {
+          font-size: 1.8rem;
+          font-weight: 600;
+          color: #003333;
+          line-height: 1.3em; }
+          .basket__left-book--details---desc span {
+            color: #009966; }
+          .basket__left-book--details---desc span.readmore {
+            color: #FF9933;
+            cursor: pointer; }
+  .basket__right {
+    width: 35%; }
+    .basket__right-box {
+      width: 80%;
+      height: 100%;
+      padding: 3.5rem;
+      background-color: rgba(222, 222, 222, 0.8);
+      border: 1px solid rgba(119, 119, 119, 0.4);
+      box-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1); }
+      .basket__right-box--title {
+        margin: 0 auto;
+        width: 130px;
+        font-size: 1.8rem;
+        color: #009966;
+        border-bottom: 1.5px solid #FF3333;
+        padding-bottom: 3px;
+        margin-bottom: 30px; }
+      .basket__right-box--pris, .basket__right-box--moms, .basket__right-box--frakt, .basket__right-box--totalt {
+        color: #003333;
+        padding: .5rem 0;
+        font-size: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%; }
+        .basket__right-box--pris .name, .basket__right-box--moms .name, .basket__right-box--frakt .name, .basket__right-box--totalt .name {
+          font-family: "Titillium Web", sans-serif; }
+      .basket__right-box--frakt {
+        border-bottom: 1px dotted rgba(0, 0, 0, 0.4); }
+        .basket__right-box--frakt .value {
+          color: #009966; }
+      .basket__right-box .checkout {
+        border: 1px solid orange;
+        background-color: #003333;
+        color: #FF9933; }
+    .basket__right .continue, .basket__right .checkout {
+      width: 80%;
+      text-align: center;
+      height: auto;
+      cursor: pointer;
+      display: block;
+      margin: 40px auto;
+      margin-bottom: 20px;
+      border-radius: 30px;
+      padding: 1.5rem 4rem;
+      font: inherit;
+      font-size: 2.2rem; }
+    .basket__right .continue {
+      border: 1px solid #003333;
+      background-color: #FF9933;
+      color: #003333; }
+
+.singleprod {
+  width: 100%;
+  height: 100%;
+  padding: 4rem 20rem; }
+  .singleprod__title {
+    width: 90%;
+    margin: 2rem 0; }
+    .singleprod__title-name, .singleprod__title-author {
+      font-family: "Titillium Web", sans-serif;
+      font-size: 2rem;
+      color: #003333;
+      margin-bottom: 5px; }
+    .singleprod__title-author {
+      font-weight: 300; }
+  .singleprod__main {
+    width: 90%;
+    margin: 3rem 0;
+    height: 100%;
+    display: flex; }
+    .singleprod__main-left {
+      width: 30%;
+      height: 40vh;
+      min-height: 200px;
+      background-image: url(../img/products/book1_front.png);
+      background-size: cover;
+      background-position: center; }
+    .singleprod__main-right {
+      width: 70%; }
+      .singleprod__main-right--price {
+        font-family: "Titillium Web", sans-serif;
+        font-size: 2.4rem;
+        margin-bottom: 2rem; }
+        .singleprod__main-right--price span {
+          font-family: "Nunito", sans-serif;
+          color: #FF3333;
+          font-size: 2rem; }
+      .singleprod__main-right--buttons {
+        width: 65%;
+        display: flex;
+        justify-content: space-between; }
+        .singleprod__main-right--buttons .checkout, .singleprod__main-right--buttons .wishlist {
+          width: 35%;
+          min-width: 210px;
+          cursor: pointer;
+          display: block;
+          margin-bottom: 20px;
+          border-radius: 30px;
+          padding: 1rem 1.5rem;
+          font: inherit;
+          font-size: 1.6rem; }
+        .singleprod__main-right--buttons .checkout {
+          border: 1px solid orange;
+          background-color: #003333;
+          color: #FF9933; }
+        .singleprod__main-right--buttons .wishlist {
+          border: 1px solid #003333;
+          background-color: #FF9933;
+          color: #003333; }
+      .singleprod__main-right--details {
+        width: 90%; }
+        .singleprod__main-right--details---kopior, .singleprod__main-right--details---framme, .singleprod__main-right--details---transport, .singleprod__main-right--details---beskrivning {
+          font-size: 1.6rem;
+          font-weight: 600;
+          color: #003333;
+          border-bottom: 1px dotted rgba(0, 0, 0, 0.7);
+          padding: 1.5rem 0; }
+        .singleprod__main-right--details---beskrivning {
+          border-bottom: none; }
+          .singleprod__main-right--details---beskrivning span {
+            color: #009966; }
+          .singleprod__main-right--details---beskrivning span.readmore {
+            cursor: pointer;
+            color: #FF9933; }
+  .singleprod__bottom {
+    width: 100%;
+    margin: 5rem 0;
+    height: 100%; }
+    .singleprod__bottom-menu {
+      width: 100%;
+      display: flex;
+      border-bottom: 0.5px solid rgba(0, 51, 51, 0.7); }
+      .singleprod__bottom-menu .beskrivning, .singleprod__bottom-menu .bedomning, .singleprod__bottom-menu .upplagor {
+        cursor: pointer;
+        font-size: 1.6rem;
+        font-weight: 600;
+        padding: 1.5rem 2rem;
+        border-top: 0.5px solid rgba(0, 51, 51, 0.7);
+        border-right: 0.5px solid rgba(0, 51, 51, 0.7); }
+      .singleprod__bottom-menu .active {
+        background-color: #003333;
+        color: #FF9933; }
+    .singleprod__bottom-info {
+      width: 100%;
+      padding: 4rem 0;
+      display: flex;
+      justify-content: space-between; }
+      .singleprod__bottom-info--left {
+        width: 60%; }
+        .singleprod__bottom-info--left---title {
+          width: 180px;
+          font-size: 2rem;
+          font-family: "Titillium Web", sans-serif;
+          color: #003333;
+          padding-bottom: 5px;
+          margin-bottom: 1.5rem;
+          border-bottom: 1.5px solid #FF9933; }
+        .singleprod__bottom-info--left---desc {
+          font-size: 1.8rem;
+          font-weight: 600;
+          line-height: 1.3em;
+          color: #003333;
+          margin-bottom: 1rem; }
+      .singleprod__bottom-info--right {
+        padding: 3rem;
+        background-color: #EFEFEF;
+        box-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.2); }
+        .singleprod__bottom-info--right---title {
+          width: 130px;
+          font-size: 1.8rem;
+          color: #009966;
+          padding-bottom: 3px;
+          border-bottom: 1.5px solid #FF3333;
+          margin-bottom: 1.5rem; }
+        .singleprod__bottom-info--right---forfattare, .singleprod__bottom-info--right---format, .singleprod__bottom-info--right---sidor, .singleprod__bottom-info--right---vikt, .singleprod__bottom-info--right---datum {
+          font-size: 1.6rem;
+          margin-bottom: 1.5rem; }
+          .singleprod__bottom-info--right---forfattare span, .singleprod__bottom-info--right---format span, .singleprod__bottom-info--right---sidor span, .singleprod__bottom-info--right---vikt span, .singleprod__bottom-info--right---datum span {
+            font-weight: 600; }
+
+.checkout {
+  width: 100%;
+  height: 100%;
+  padding: 5rem 20rem; }
+  .checkout__title {
+    width: 85px; }
+  .checkout .wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; }
+  .checkout__left {
+    width: 60%; }
+    .checkout__left-topbar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 0; }
+      .checkout__left-topbar--betalning, .checkout__left-topbar--leverans, .checkout__left-topbar--bekraftelse {
+        width: 30%;
+        text-align: center;
+        padding-bottom: 5px;
+        font-size: 2rem;
+        font-family: "Titillium Web", sans-serif;
+        color: #003333;
+        border-bottom: 2px solid #003333; }
+      .checkout__left-topbar .current {
+        color: #009966;
+        border-bottom: 2px solid #009966; }
+    .checkout__left .form {
+      width: 100%;
+      margin: 2rem auto; }
+      .checkout__left .form .formwrapper {
+        width: 50%;
+        margin: 0 auto;
+        flex-direction: column; }
+      .checkout__left .form__name, .checkout__left .form__email, .checkout__left .form__address, .checkout__left .form__postnumber, .checkout__left .form__city {
+        display: block;
+        width: 100%;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #003333;
+        margin-bottom: 1rem; }
+        .checkout__left .form__name-input, .checkout__left .form__email-input, .checkout__left .form__address-input, .checkout__left .form__postnumber-input, .checkout__left .form__city-input {
+          width: 100%;
+          padding: 3px 0;
+          border: none;
+          font: inherit;
+          font-size: 1.8rem;
+          margin-bottom: 1.5rem;
+          border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+          transition: all .3s; }
+          .checkout__left .form__name-input:focus, .checkout__left .form__email-input:focus, .checkout__left .form__address-input:focus, .checkout__left .form__postnumber-input:focus, .checkout__left .form__city-input:focus {
+            outline: none;
+            border-bottom: 2px solid #009966; }
+      .checkout__left .form .buttons {
+        display: flex; }
+      .checkout__left .form__continue, .checkout__left .form__return {
+        width: 40%;
+        cursor: pointer;
+        display: block;
+        margin: 40px auto;
+        margin-bottom: 20px;
+        border-radius: 30px;
+        padding: 1rem 1.5rem;
+        font: inherit;
+        font-size: 2rem; }
+      .checkout__left .form__continue {
+        border: 1px solid orange;
+        background-color: #003333;
+        color: #FF9933; }
+      .checkout__left .form__return {
+        text-align: center;
+        border: 1px solid #003333;
+        background-color: #FF9933;
+        color: #FEFEFE; }
+  .checkout__right {
+    width: 35%;
+    display: flex;
+    justify-content: flex-end; }
+    .checkout__right-box {
+      width: 60%;
+      height: 500px;
+      max-height: 100%;
+      background-color: rgba(222, 222, 222, 0.8);
+      border: 1px solid rgba(119, 119, 119, 0.4);
+      box-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1); }
+      .checkout__right-box--title {
+        border: 1px solid rgba(0, 153, 102, 0.4);
+        width: 100%;
+        color: #009966;
+        padding: 3rem 5rem;
+        background-color: #009966;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .checkout__right-box--title .title {
+          color: #FEFEFE;
+          border-bottom: 1.5px solid #FF3333;
+          padding-bottom: 3px;
+          width: 120px; }
+      .checkout__right-box .summary {
+        padding: 3rem; }
+      .checkout__right-box--pris, .checkout__right-box--moms, .checkout__right-box--frakt, .checkout__right-box--totalt {
+        color: #003333;
+        padding: 1rem;
+        font-size: 1.8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%; }
+        .checkout__right-box--pris .name, .checkout__right-box--moms .name, .checkout__right-box--frakt .name, .checkout__right-box--totalt .name {
+          font-family: "Titillium Web", sans-serif; }
+      .checkout__right-box--frakt {
+        border-bottom: 1px dotted rgba(0, 0, 0, 0.4); }
+        .checkout__right-box--frakt .value {
+          color: #009966; }
+
+.aboutus {
+  width: 100%;
+  height: 100%;
+  padding: 5rem 10rem; }
+  .aboutus__title {
+    font-family: "Titillium Web", sans-serif;
+    font-size: 2rem;
+    color: #003333;
+    width: 70px;
+    margin: 2rem auto;
+    margin-bottom: 5rem;
+    text-align: center;
+    border-bottom: 2px solid #FF9933; }
+  .aboutus .wrapper {
+    display: flex;
+    justify-content: space-between; }
+  .aboutus__box {
+    width: 25%; }
+    .aboutus__box-img {
+      width: 100%;
+      min-height: 150px;
+      height: 30vh;
+      background-size: cover;
+      background-image: url(../img/slidepics/slide1.jpg);
+      background-position: center; }
+    .aboutus__box .img1 {
+      background-image: url(../img/slidepics/slide1.jpg); }
+    .aboutus__box .img2 {
+      background-image: url(../img/slidepics/slide2.jpg); }
+    .aboutus__box .img3 {
+      background-image: url(../img/slidepics/slide3.jpg); }
+    .aboutus__box-title {
+      margin: 2rem 0;
+      margin-bottom: .5rem;
+      font-size: 1.8rem;
+      color: #009966; }
+    .aboutus__box-desc {
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 1.3em;
+      color: #003333; }
+  .aboutus__img {
+    width: 100%;
+    height: 60vh;
+    background-image: url(../img/slidepics/slide4.jpg);
+    background-size: cover;
+    background-position: center;
+    margin: 10rem 0;
+    margin-bottom: 0; }
+
+.newsletter {
+  width: 100%;
+  height: 100%;
+  padding: 8rem; }
+  .newsletter__pitch {
+    font-family: "Titillium Web", sans-serif;
+    font-size: 2.4rem;
+    color: #003333;
+    text-align: center;
+    line-height: 1.3em;
+    position: relative;
+    margin-bottom: 8rem; }
+    .newsletter__pitch::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 90px;
+      background-color: #FF9933;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%); }
+  .newsletter__input, .newsletter__btn {
+    width: 30%;
+    margin: 0 auto;
+    display: block;
+    border: 0.5px solid rgba(0, 0, 0, 0.6);
+    padding: 1.5rem 2rem;
+    font: inherit;
+    font-size: 1.8rem; }
+  .newsletter__btn {
+    cursor: pointer;
+    background-color: #FF9933;
+    color: #003333;
+    border: 0.5px solid #003333;
+    font-size: 2rem;
+    font-weight: 600; }

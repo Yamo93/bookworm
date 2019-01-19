@@ -1,0 +1,45 @@
+.newsletter {
+    width: 100%;
+    height: 100%;
+    padding: 8rem;
+
+    &__pitch {
+        font-family: $secondary-font;
+        font-size: 2.4rem;
+        color: $darkblue;
+        text-align: center;
+        line-height: 1.3em;
+        position: relative;
+        margin-bottom: 8rem;
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 90px;
+            background-color: $orange;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__input, &__btn {
+        width: 30%;
+        margin: 0 auto;
+        display: block;
+        border: .5px solid rgba(0, 0, 0, .6);
+        padding: 1.5rem 2rem;
+        font: inherit;
+        font-size: 1.8rem;
+    }
+
+    &__btn {
+        cursor: pointer;
+        background-color: $orange;
+        color: $darkblue;
+        border: .5px solid $darkblue;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+}

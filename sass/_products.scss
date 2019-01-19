@@ -1,0 +1,75 @@
+.products {
+    height: 100%;
+
+    &__collection {
+        height: 400px;
+        
+        .product {
+            width: 20%;
+
+            &__pic {
+                width: 100%;
+                height: 30vh;
+                background-position: center;
+                background-size: cover;
+                margin-bottom: 1rem;
+            }
+
+            .pic1 {
+                background-image: url(../img/products/book1_front.png);
+            }
+
+            .pic2 {
+                background-image: url(../img/products/book2_front.png);
+            }
+
+            .pic3 {
+                background-image: url(../img/products/book3_front.png);
+            }
+
+            .pic4 {
+                background-image: url(../img/products/book4_front.png);
+            }
+
+            &__title {
+                color: $darkblue;
+                font-weight: 600;
+                font-size: 1.8rem;
+                font-family: $secondary-font;
+                margin-bottom: .2rem;
+            }
+
+            &__author {
+                color: $darkblue;
+                font-size: 1.6rem;
+                margin-bottom: .2rem;
+            }
+
+            &__price {
+                font-weight: 600;
+                font-family: $secondary-font;
+                font-size: 1.8rem;
+                color: $red;
+                margin-bottom: 1rem;
+            }
+
+            &__btn {
+                border: 1px solid $orange;
+                background-color: $darkblue;
+                color: $orange;
+                padding: 1rem .5rem;
+                border-radius: 30px;
+                font-family: inherit;
+                width: 80%;
+                cursor: pointer;
+                transition: all .3s;
+
+                &:hover {
+                    border: 1px solid $darkblue;
+                    background-color: $orange;
+                    color: $darkblue;
+                }
+            }
+        }
+    }
+}

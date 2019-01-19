@@ -1,0 +1,52 @@
+$primary-font: 'Nunito', sans-serif;
+$secondary-font: 'Titillium Web', sans-serif;
+$darkblue: #003333;
+$orange: #FF9933;
+$lightgreen: #009966;
+$red: #FF3333;
+$lightblue: #009999;
+$white: #FEFEFE;
+$gray: #F6F6F6;
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $lightgreen;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $primary-font;
+    height: 100%;
+}
+
+.default-title {
+    font-size: 2.6rem;
+    font-family: $secondary-font;
+    color: $darkblue;
+    padding-bottom: 2px;
+    position: relative;
+    width: 95px;
+    margin-bottom: 3rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-bottom: 2.5px solid $orange;
+        width: 100%;
+    }
+}

@@ -1,0 +1,49 @@
+.footer {
+    width: 100%;
+    height: 50vh;
+    padding: 4rem;
+    min-height: 300px;
+    background-color: $darkblue;
+    font-family: $secondary-font;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &__links {
+        width: 150px;
+        cursor: pointer;
+    }
+
+    &__social {
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+
+        &-icon {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            // background-color: $orange;
+
+            // &:nth-child(1) {
+            //     background-image: url(../img/social_icons/twitter_icon_final.svg);
+            // }
+
+            // &:nth-child(2) {
+            //     background-color: red;
+            // }
+
+            // &:nth-child(3) {
+            //     background-color: red;
+            // }
+        }
+    }
+
+    &__copy {
+        color: $orange;
+    }
+}
