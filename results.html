@@ -103,42 +103,43 @@
 
         <!-- Book section -->
     </section>
-    <section class="basket">
-        <h1 class="basket__title default-title">Din varukorg</h1>
-        <div class="wrapper">
-            <div class="basket__left">
-                <div class="basket__left-topbar">
-                    <h3 class="basket__left-topbar--proddesc">Produktbeskrivning</h3>
-                    <h3 class="basket__left-topbar--quantity">Antal</h3>
-                    <h3 class="basket__left-topbar--total">Totalt</h3>
-                </div>
-            
-        </div>
-            <div class="basket__right">
-                <div class="basket__right-box">
-                    <h3 class="basket__right-box--title">Produktdetaljer</h3>
-                    <div class="basket__right-box--pris">
-                        <h4 class="basket__right-box--pris---name">Pris</h4>
-                        <h4 class="basket__right-box--pris---value">149 SEK</h4>
-                    </div>
-                    <div class="basket__right-box--moms">
-                        <h4 class="basket__right-box--moms---name">Moms</h4>
-                        <h4 class="basket__right-box--moms---value">10 SEK</h4>
-                    </div>
-                    <div class="basket__right-box--frakt">
-                        <h4 class="basket__right-box--frakt---name">Frakt</h4>
-                        <h4 class="basket__right-box--frakt---value">Gratis</h4>
-                    </div>
-                    <div class="basket__right-box--totalt">
-                        <h4 class="basket__right-box--totalt---name">Totalt</h4>
-                        <h4 class="basket__right-box--totalt---value">159 SEK</h4>
-                    </div>
+    <section class="results">
+        <h1 class="results__title default-title">Sökresultat</h1>
+        <h3 class="results__state">Du sökte efter <span>"java"</span>. Antalet resultat är 2/6.</h3>
+        <button class="singleprod__returnbtn">Gå tillbaka</button>
 
-                    <a href="./checkout.html" class="checkout">Gå till kassan</a>
-                    <a href="./products.html" class="continue">Fortsätt handla</a>
+            <div class="results__area">
+                <div class="results__area-topbar">
+                    <h3 class="results__area-topbar--proddesc results__area-proddesc">Produktbeskrivning</h3>
+                    <h3 class="results__area-topbar--quantity results__area-quantity">Antal</h3>
+                    <h3 class="results__area-topbar--total results__area-total">Totalt</h3>
                 </div>
-            </div>
             
+                <!-- <div class="product">
+                    <div class="results__area-info">
+                        <div class="results__area-info--desc">
+                            <h3 class="results__area-info--desc---title">${item.title}</h3>
+                            <p class="results__area-info--desc---author">${item.author}</p>
+                        </div>
+                        <div class="results__area-info--quant">
+                            <input type="number" class="prod_quantity" value="1">
+                        </div>
+                        <h1 class="results__area-info--price">${item.price} SEK</h1>
+                    </div>
+                    <div class="results__area-book">
+                        <div class="results__area-book--img" style="${item.imgURL}"></div>
+                        <div class="results__area-book--details">
+                            <p class="results__area-book--details---skick"><span>Skick:</span> Väldigt bra</p>
+                            <p class="results__area-book--details---format"><span>Format:</span> Hardback</p>
+                            <p class="results__area-book--details---sidor"><span>Antal sidor:</span> ${item.pages}</p>
+                            <p class="results__area-book--details---vikt"><span>Vikt:</span> ${item.weight} gram</p>
+                            <p class="results__area-book--details---datum"><span>Publiceringsdatum:</span> 2018-10-16</p>
+                            <p class="results__area-book--details---desc"><span>Kort beskrivning:</span> En fantastisk, underhållande bok som har sålts i stora antal världen runt om... <a href="./book${item.id}.html"><span class="readmore">Läs mer</span></a></p>
+                            <p class="add_to_checkout" data-id="${item.id}">Lägg till i varukorgen</p>
+                            <p class="add_to_wishlist" data-id="${item.id}">Lägg till i önskelista ❤️</p>
+                        </div>
+                    </div>
+                </div> -->
         </div>
 
     </section>

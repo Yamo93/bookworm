@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg width="300" height="320" version="1.1" viewBox="0 0 79.375 84.667" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<svg width="300" height="300" version="1.1" viewBox="0 0 79.375 79.375" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
  <metadata>
   <rdf:RDF>
    <cc:Work rdf:about="">
@@ -10,7 +10,7 @@
    </cc:Work>
   </rdf:RDF>
  </metadata>
- <g transform="translate(0 -212.33)">
-  <path d="m42.026 235.01s-4.8312-14.319-17.634-14.319c-12.803 0-20.291 14.044-19.808 23.957 0.48312 9.9131 36.717 41.855 36.717 41.855s34.301-32.218 34.06-41.029c-0.24156-8.8116-3.6234-23.406-15.943-23.957-12.319-0.55072-17.392 13.493-17.392 13.493z" fill="#ff2a2a" stroke="#000" stroke-width=".36107px"/>
+ <g transform="translate(0 -217.62)">
+  <path d="m41.594 236.72s-5.1386-16.197-18.756-16.197c-13.617 0-21.582 15.886-21.068 27.099 0.51386 11.213 39.053 47.345 39.053 47.345s36.484-36.443 36.227-46.411c-0.25693-9.9674-3.8539-26.476-16.957-27.099-13.103-0.62295-18.499 15.263-18.499 15.263z" fill="#ff2a2a" stroke="#ff2a2a" stroke-width=".39647"/>
  </g>
 </svg>

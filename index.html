@@ -16,13 +16,80 @@
         </div>
         <div class="hero__menu">
             <div class="hero__menu-top">
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="dropdown">
+                    <ul class="dropdown__menu">
+                        <p class="dropdown__menu-close">&times;</p>
+                        <a href="#"><li class="dropdown__menu-item">Hem</li></a>
+                        <a href="./products.html"><li class="dropdown__menu-item">Våra produkter</li></a>
+                        <a href="./aboutus.html"><li class="dropdown__menu-item">Om oss</li></a>
+                        <a href="./checkout.html"><li class="dropdown__menu-item">Kassan</li></a>
+                        <a href="./basket.html"><li class="dropdown__menu-item">Varukorgen</li></a>
+                    </ul>
+                </div>
                 <div class="hero__menu-top--logo">
                     <a href="./index.html"><img src="./img/logo/logo.svg" alt="Bookworms logga" /></a>
                 </div>
-                <input type="search" class="hero__menu-top--search" placeholder="Sök efter bok, författare...">
+                <div class="search">
+                    <div class="search__field">
+                        <input type="search" class="hero__menu-top--search" placeholder="Sök efter boktitel...">
+                        <button class="searchbtn">
+                            <div class="glass"></div>
+                            <div class="handle"></div>
+                        </button>
+                    </div>
+                    <div class="search__suggest">
+                        <!-- <div class="search__suggest-choice">
+                            <div class="search__suggest-choice--icon">
+                                <div class="search__suggest-choice--icon---glass"></div>
+                                <div class="search__suggest-choice--icon---handle"></div>
+                            </div>
+                            <p class="search__suggest-choice--text"><span>java</span>script</p>
+                        </div> -->
+                    </div>
+            </div>
                 <div class="hero__menu-top--basket">
-                    <img src="./img/page_icons/basket_icon_final.png" alt="Önskelista" class="heart">
-                    <img src="./img/page_icons/heart_icon_final.png" alt="Önskelista" class="heart">
+                    <div class="basket_icon" data-items="1">
+                        <img src="./img/page_icons/basket_icon_final.svg" alt="Minivarukorg" class="minibasket_icon">
+                    </div>
+                        <img src="./img/page_icons/heart_icon_final.svg" alt="Önskelista" class="heart_icon">
+                        <div class="minibasket">
+                            <div class="minibasket__top">
+                                <p class="minibasket__top-title">Min varukorg</p>
+                                <a href="./basket.html" class="minibasket__top-link">Visa varukorg</a>
+                            </div>
+                            <!-- <div class="minibasket__alert">
+                                <h2 class="minibasket__alert-msg">Boken "Blabla" har lagts till i din varukorg!</h2>
+                                <div class="minibasket__alert-close">&times;</div>
+                            </div> -->
+                            <div class="minibasket__books">
+                                <!-- <div class="book">
+                                    <div class="book__img"></div>
+                                    <div class="book__details">
+                                        <h3 class="book__details-title">Blabla bla</h3>
+                                        <label  class="book__details-label">Antal:</label>
+                                        <input type="number" class="book__details-input">
+                                        <p class="book__details-price">199 SEK</p>
+                                    </div>
+
+                                    <p class="book__remove">&times; TA BORT</p>
+                                </div> -->
+                            </div>
+                                <div class="minibasket__total">
+                                    <div class="minibasket__total-top">
+                                        <p class="minibasket__total-top--quantity"><span>Inga</span> varor</p>
+                                        <p class="minibasket__total-top--total">Totalt: <span>0 SEK</span></p>
+                                    </div>
+                                    <div class="bottom">
+                                        <a href="./basket.html" class="varukorg">Visa varukorg</a>
+                                        <a href="./checkout.html" class="kassa">Till kassan</a>
+                                    </div>
+                                </div>
+                        </div>
                 </div>
             </div>
             <div class="hero__menu-bottom">
@@ -35,13 +102,25 @@
             </div>
         </div>
         </header>
+        <div class="modal">
+                <p class="closemodal">&times;</p>
+                <div class="modal__pic"></div>
+                <p class="modal__left">&larr;</p>
+                <p class="modal__right">&rarr;</p>
+            </div>
+            <div class="backdrop"></div>
         <section class="gallery">
+            <div class="slide">
+                <div class="show show1"></div>
+                <div class="show show2"></div>
+                <div class="show show3"></div>
+            </div>
             <div class="gallery__larr">&larr;</div>
             <div class="gallery__rarr">&rarr;</div>
             <div class="gallery__switches">
-                <div class="switch"></div>
-                <div class="switch"></div>
-                <div class="switch"></div>
+                <div class="switch switch1 active"></div>
+                <div class="switch switch2"></div>
+                <div class="switch switch3"></div>
             </div>
         </section>
     </section>
@@ -64,14 +143,58 @@
     </section>
     <section class="newbooks">
         <h1 class="newbooks__title default-title">Våra senaste böcker</h1>
-        <div class="newbooks__collection">
-            <div class="larr">&larr;</div>
-            <div class="book book1"></div>
-            <div class="book book2"></div>
-            <div class="book book3"></div>
-            <div class="book book4"></div>
-            <div class="rarr">&rarr;</div>
-        </div>
+        <div class="newbooks__collection products__collection">
+                <div class="larr slide_larr">&larr;</div>
+                <div class="product prodplace1">
+                    <div class="product__pic pic1"></div>
+                    <h2 class="product__title">Introduction to The Design and Analysis of Algorithms</h2>
+                    <p class="product__author">av Anany Levitin</p>
+                    <p class="product__price">149 SEK</p>
+                    <a href="./book1.html" class="product__linkbtn">Läs mer om boken</a>
+                    <button class="product__basketbtn" id="book1">Lägg till i kassan</button>
+                </div>
+                <div class="product prodplace2">
+                        <div class="product__pic pic2"></div>
+                        <h2 class="product__title">Introducing Data Structures with Java</h2>
+                        <p class="product__author">av David Cousins</p>
+                        <p class="product__price">159 SEK</p>
+                        <a href="./book2.html" class="product__linkbtn">Läs mer om boken</a>
+                        <button class="product__basketbtn" id="book2">Lägg till i kassan</button>
+                </div>
+                <div class="product prodplace3">
+                        <div class="product__pic pic3"></div>
+                        <h2 class="product__title">An Introduction to Object-Oriented Programming...</h2>
+                        <p class="product__author">av C. Thomas Wu</p>
+                        <p class="product__price">169 SEK</p>
+                        <a href="./book3.html" class="product__linkbtn">Läs mer om boken</a>
+                        <button class="product__basketbtn" id="book3">Lägg till i kassan</button>
+                </div>
+                <div class="product prodplace4">
+                        <div class="product__pic pic4"></div>
+                        <h2 class="product__title">The C Programming Language - Second Edition</h2>
+                        <p class="product__author">av B. W. Kernighan och D. Ritchie</p>
+                        <p class="product__price">179 SEK</p>
+                        <a href="./book4.html" class="product__linkbtn">Läs mer om boken</a>
+                        <button class="product__basketbtn" id="book4">Lägg till i kassan</button>
+                </div>
+                <!-- <div class="product">
+                        <div class="product__pic pic5"></div>
+                        <h2 class="product__title">Concepts of Programming Languages</h2>
+                        <p class="product__author">av Robert W. Sebesta</p>
+                        <p class="product__price">179 SEK</p>
+                        <a href="./book5.html" class="product__linkbtn">Läs mer om boken</a>
+                        <button class="product__basketbtn">Lägg till i kassan</button>
+                </div>
+                <div class="product">
+                        <div class="product__pic pic6"></div>
+                        <h2 class="product__title">Python Programming - An Introduction to Computer Science</h2>
+                        <p class="product__author">av John Zelle</p>
+                        <p class="product__price">179 SEK</p>
+                        <a href="./book6.html" class="product__linkbtn">Läs mer om boken</a>
+                        <button class="product__basketbtn">Lägg till i kassan</button>
+                </div> -->
+                <div class="rarr slide_rarr">&rarr;</div>
+            </div>
     </section>
     <footer class="footer">
         <ul class="footer__links">
@@ -82,14 +205,15 @@
         </ul>
 
         <div class="footer__social">
-            <div class="footer__social-icon"></div>
-            <div class="footer__social-icon"></div>
-            <div class="footer__social-icon"></div>
+            <img src="./img/social_icons/twitter_icon_final.svg" class="icon">
+            <img src="./img/social_icons/facebook_icon_final.svg" class="icon">
+            <img src="./img/social_icons/instagram_icon_final.svg" class="icon">
         </div>
 
         <p class="footer__copy">
             Copyright &copy; 2019 by Yamo Gebrewold
         </p>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>

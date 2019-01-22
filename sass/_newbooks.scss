@@ -1,8 +1,12 @@
 .newbooks {
     width: 100%;
-    height: 70vh;
-    min-height: 450px;
-    padding: 3rem 16rem;
+    height: 100%;
+    padding: 5rem 15rem;
+    // margin-bottom: 10rem;
+
+    @media screen and (max-width: 1050px) {
+        padding: 5rem 8rem;
+    }
 
     &__title {
         width: 240px;
@@ -10,19 +14,81 @@
 
     &__collection {
         width: 100%;
-        height: 45vh;
-        // background-color: #444;
+        // min-height: 100%;
+        height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: relative;
-        
-        .book {
+
+        @media screen and (max-width: 850px) {
+            flex-wrap: wrap;
+        }
+
+        .product {
             width: 20%;
+            min-width: 170px;
             height: 100%;
+
+            @media screen and (max-width: 1050px) {
+                width: 30%;
+            }
+
+            @media screen and (max-width: 470px) {
+                width: 60%;
+                margin: 0 auto;
+                margin-bottom: 2rem;
+            }
+
+            &__linkbtn, &__basketbtn {
+                display: block;
+                padding: 1rem .5rem;
+                border-radius: 30px;
+                font-family: inherit;
+                font-size: 1.4rem;
+                width: 90%;
+                cursor: pointer;
+                transition: all .3s;
+            }
+
+            &__linkbtn {
+                &:link, &:visited {                
+                display: block;
+                text-align: center;
+                border: 1px solid $white;
+                background-color: $lightgreen;
+                color: $white;
+                margin-bottom: 1rem;
+                }
+
+                &:hover, &:active {
+                    border: 1px solid $white;
+                    background-color: darken($lightgreen, 10%);
+                    color: $white;
+                }
+            }
+
+            &__basketbtn {
+                border: 1px solid $orange;
+                background-color: $darkblue;
+                color: $orange;
+
+                &:hover {
+                    border: 1px solid $darkblue;
+                    background-color: $orange;
+                    color: $darkblue;
+                }
+            }
+        }
+
+        .startbook {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
             background-size: cover;
             background-position: center;
         }
+        
 
         .book1 {
             background-image: url(../img/products/book1_front.png);
@@ -51,6 +117,10 @@
             border-radius: 50%;
             padding: 1.5rem;
             // width: 50px;
+
+            @media screen and (max-width: 470px) {
+                display: none;
+            }
         }
 
         .larr {

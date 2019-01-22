@@ -1,13 +1,16 @@
 .products {
     height: 100%;
+    width: 100%;
 
     &__collection {
-        height: 400px;
+        width: 100%;
+        margin: 0 auto;
         
         .product {
             width: 20%;
 
             &__pic {
+                cursor: pointer;
                 width: 100%;
                 height: 30vh;
                 background-position: center;
@@ -29,6 +32,14 @@
 
             .pic4 {
                 background-image: url(../img/products/book4_front.png);
+            }
+
+            .pic5 {
+                background-image: url(../img/products/book5_front.png);
+            }
+
+            .pic6 {
+                background-image: url(../img/products/book6_front.png);
             }
 
             &__title {
@@ -53,16 +64,37 @@
                 margin-bottom: 1rem;
             }
 
-            &__btn {
-                border: 1px solid $orange;
-                background-color: $darkblue;
-                color: $orange;
+            &__linkbtn, &__basketbtn {
                 padding: 1rem .5rem;
                 border-radius: 30px;
                 font-family: inherit;
-                width: 80%;
+                font-size: 1.4rem;
+                width: 90%;
                 cursor: pointer;
                 transition: all .3s;
+            }
+
+            &__linkbtn {
+                &:link, &:visited {                
+                display: block;
+                text-align: center;
+                border: 1px solid $white;
+                background-color: $lightgreen;
+                color: $white;
+                margin-bottom: 1rem;
+                }
+
+                &:hover, &:active {
+                    border: 1px solid $white;
+                    background-color: darken($lightgreen, 10%);
+                    color: $white;
+                }
+            }
+
+            &__basketbtn {
+                border: 1px solid $orange;
+                background-color: $darkblue;
+                color: $orange;
 
                 &:hover {
                     border: 1px solid $darkblue;

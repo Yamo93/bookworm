@@ -8,8 +8,37 @@
     justify-content: space-between;
     align-items: center;
 
+    @media screen and (max-width: 1000px) {
+        padding: 3rem 6rem;
+    }
+
+    @media screen and (max-width: 750px) {
+        padding: 2rem 3rem;
+    }
+
+    @media screen and (max-width: 620px) {
+        flex-direction: column;
+        height: 100%;
+    }
+
     &__left {
         width: 35%;
+
+        @media screen and (max-width: 750px) {
+            width: 45%;
+        }
+
+        @media screen and (max-width: 620px) {
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 4rem;
+        }
+
+        @media screen and (max-width: 400px) {
+            width: 100%;
+            margin: 0 auto;
+            margin-bottom: 4rem;
+        }
 
         &-title {
             font-size: 2.6rem;
@@ -33,11 +62,38 @@
         &-para {
             font-size: 2rem;
             width: 400px;
+
+            @media screen and (max-width: 850px) {
+                width: 300px;
+                font-size: 1.8rem;
+            }
         }
     }
 
     &__right {
         width: 35%;
+
+        @media screen and (max-width: 750px) {
+            width: 45%;
+        }
+
+        @media screen and (max-width: 620px) {
+            width: 70%;
+            margin: 0 auto;
+            margin-bottom: 4rem;
+        }
+
+        @media screen and (max-width: 500px) {
+            width: 60%;
+            margin: 0 auto;
+            margin-bottom: 4rem;
+        }
+
+        @media screen and (max-width: 400px) {
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 4rem;
+        }
 
         &-box {
             width: 350px;
@@ -51,6 +107,16 @@
             // justify-content: center;
             align-items: center;
 
+            @media screen and (max-width: 1050px) {
+                width: 300px;
+                height: 250px;
+            }
+
+            @media screen and (max-width: 900px) {
+                width: 250px;
+                height: 200px;
+            }
+
             &--title {
                 font-family: $secondary-font;
                 width: 60%;
@@ -59,6 +125,10 @@
                 padding-bottom: 1.5rem;
                 border-bottom: 1px dotted rgba(0, 0, 0, .7);
                 margin-bottom: 1.5rem;
+
+                @media screen and (max-width: 900px) {
+                    font-size: 2rem;
+                }
             }
 
             &--desc {
@@ -67,12 +137,19 @@
                 font-weight: 600;
                 color: $lightgreen;
 
+                @media screen and (max-width: 900px) {
+                    font-size: 2rem;
+                }
+
                 span {
                     display: block;
                     color: $orange;
                     font-family: $primary-font;
                     font-size: 4.2rem;
                     font-weight: 300;
+                    @media screen and (max-width: 900px) {
+                        font-size: 3rem;
+                    }
                 }
             }
         }

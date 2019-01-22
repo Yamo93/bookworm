@@ -3,6 +3,30 @@
     height: 100%;
     padding: 4rem 20rem;
 
+    @media screen and (max-width: 1100px) {
+        padding: 5rem;
+    }
+
+    &__returnbtn {
+            cursor: pointer;
+            border: none;
+            display: block;
+            width: 160px;
+            text-align: center;
+            padding: 1.5rem 3rem;
+            background-color: $lightgreen;
+            font-family: inherit;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: $white;
+            margin-bottom: 2rem;
+            transition: all .3s;
+
+        &:hover {
+            background-color: darken($lightgreen, 10%);
+        }
+    }
+
     &__title {
         width: 90%;
         margin: 2rem 0;
@@ -19,23 +43,75 @@
         }
     }
 
+    .specialmain {
+        flex-direction: column;
+    }
+
     &__main {
         width: 90%;
         margin: 3rem 0;
         height: 100%;
         display: flex;
 
+        @media screen and (max-width: 820px) {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .wrapper {
+            display: flex;
+
+            @media screen and (max-width: 800px) {
+                flex-direction: column;
+            }
+        }
+
         &-left {
             width: 30%;
             height: 40vh;
             min-height: 200px;
-            background-image: url(../img/products/book1_front.png);
+            cursor: pointer;
             background-size: cover;
             background-position: center;
+
+            @media screen and (max-width: 820px) {
+                width: 90%;
+                height: 60vh;
+                margin-bottom: 2rem;
+            }
+        }
+        
+        .bookcover1 {
+            background-image: url('../img/products/book1_front.png');
+        }
+
+        .bookcover2 {
+            background-image: url('../img/products/book2_front.png');
+        }
+
+        .bookcover3 {
+            background-image: url('../img/products/book3_front.png');
+        }
+
+        .bookcover4 {
+            background-image: url('../img/products/book4_front.png');
+        }
+
+        .bookcover5 {
+            background-image: url('../img/products/book5_front.png');
+        }
+
+        .bookcover6 {
+            background-image: url('../img/products/book6_front.png');
         }
 
         &-right {
             width: 70%;
+
+            @media screen and (max-width: 820px) {
+                width: 90%;
+                margin: 0 auto;
+            }
 
             &--price {
                 font-family: $secondary-font;
@@ -50,11 +126,17 @@
             }
 
             &--buttons {
-                width: 65%;
+                width: 90%;
                 display: flex;
                 justify-content: space-between;
 
-                .checkout, .wishlist {
+                @media screen and (max-width: 600px) {
+                    flex-direction: column;
+                    width: 90%;
+                    margin: 0 auto;
+                }
+
+                &---checkout, .wishlist {
                     width: 35%;
                     min-width: 210px;
                     cursor: pointer;
@@ -64,18 +146,27 @@
                     padding: 1rem 1.5rem;
                     font: inherit;
                     font-size: 1.6rem;
+                    transition: all .3s;
                 }
 
-                .checkout {
+                &---checkout {
                     border: 1px solid orange;
                     background-color: $darkblue;
                     color: $orange;
+
+                    &:hover {
+                        background-color: lighten($darkblue, 10%);
+                    }
                 }
 
                 .wishlist {
                     border: 1px solid $darkblue;
                     background-color: $orange;
                     color: $darkblue;
+
+                    &:hover {
+                        background-color: darken($orange, 15%);
+                    }
                 }
             }
 
@@ -116,6 +207,10 @@
             display: flex;
             border-bottom: .5px solid rgba($darkblue, .7);
 
+            @media screen and (max-width: 425px) {
+                flex-direction: column;
+            }
+
             .beskrivning, .bedomning, .upplagor {
                 cursor: pointer;
                 font-size: 1.6rem;
@@ -137,8 +232,17 @@
             display: flex;
             justify-content: space-between;
 
+            @media screen and (max-width: 600px) {
+                flex-direction: column;
+            }
+
             &--left {
-                width: 60%;
+                width: 50%;
+
+                @media screen and (max-width: 600px) {
+                    width: 90%;
+                    margin-bottom: 3rem;
+                }
 
                 &---title {
                     width: 180px;

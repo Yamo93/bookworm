@@ -32,7 +32,7 @@
                             </ul>
                         </div>
                 <div class="hero__menu-top--logo">
-                    <a href="./index.html"><img src="./img/logo/logo.svg" alt="Bookworms logga"></a>
+                        <a href="./index.html"><img src="./img/logo/logo.svg" alt="Bookworms logga"></a>
                 </div>
                 <div class="search">
                     <div class="search__field">
@@ -94,8 +94,8 @@
                 <ul>
                     <li><a href="./index.html">Hem</a></li>
                     <li><a href="./products.html">Våra produkter</a></li>
-                    <li><a href="./aboutus.html">Om oss</a></li>
-                    <li><a href="./checkout.html">Kassan</a></li>
+                    <li><a href="#">Om oss</a></li>
+                    <li><a href="#">Kassan</a></li>
                 </ul>
             </div>
         </div>
@@ -103,42 +103,58 @@
 
         <!-- Book section -->
     </section>
-    <section class="basket">
-        <h1 class="basket__title default-title">Din varukorg</h1>
-        <div class="wrapper">
-            <div class="basket__left">
-                <div class="basket__left-topbar">
-                    <h3 class="basket__left-topbar--proddesc">Produktbeskrivning</h3>
-                    <h3 class="basket__left-topbar--quantity">Antal</h3>
-                    <h3 class="basket__left-topbar--total">Totalt</h3>
+    <section class="singleprod">
+            <div class="modal">
+                    <p class="closemodal">&times;</p>
+                    <p class="modal__left">&larr;</p>
+                    <p class="modal__right">&rarr;</p>
                 </div>
-            
+                <div class="backdrop"></div>
+                <button class="singleprod__returnbtn">Gå tillbaka</button>
+        <div class="singleprod__title">
+            <h1 class="singleprod__title-name">Concepts of Programming Languages - Tenth Edition</h1>
+            <h2 class="singleprod__title-author">Av Robert W. Sebesta</h2>
         </div>
-            <div class="basket__right">
-                <div class="basket__right-box">
-                    <h3 class="basket__right-box--title">Produktdetaljer</h3>
-                    <div class="basket__right-box--pris">
-                        <h4 class="basket__right-box--pris---name">Pris</h4>
-                        <h4 class="basket__right-box--pris---value">149 SEK</h4>
-                    </div>
-                    <div class="basket__right-box--moms">
-                        <h4 class="basket__right-box--moms---name">Moms</h4>
-                        <h4 class="basket__right-box--moms---value">10 SEK</h4>
-                    </div>
-                    <div class="basket__right-box--frakt">
-                        <h4 class="basket__right-box--frakt---name">Frakt</h4>
-                        <h4 class="basket__right-box--frakt---value">Gratis</h4>
-                    </div>
-                    <div class="basket__right-box--totalt">
-                        <h4 class="basket__right-box--totalt---name">Totalt</h4>
-                        <h4 class="basket__right-box--totalt---value">159 SEK</h4>
-                    </div>
 
-                    <a href="./checkout.html" class="checkout">Gå till kassan</a>
-                    <a href="./products.html" class="continue">Fortsätt handla</a>
+        <div class="singleprod__main">
+            <div class="singleprod__main-left bookcover5">
+            </div>
+            <div class="singleprod__main-right">
+                <h1 class="singleprod__main-right--price">179 SEK <span>+ frakt ingår!</span></h1>
+                <div class="singleprod__main-right--buttons">
+                    <button class="singleprod__main-right--buttons---checkout" id="book5">Lägg till i korgen</button>
+                    <button class="wishlist">Lägg till i önskelista ❤️</button>
+                </div>
+                <div class="singleprod__main-right--details">
+                    <p class="singleprod__main-right--details---kopior">Det finns 50+ kopior kvar i lagret</p>
+                    <p class="singleprod__main-right--details---framme">Produkten är framme inom 1-2 arbetsdagar</p>
+                    <p class="singleprod__main-right--details---transport">Produkten går att hämtas vid butik</p>
+                    <p class="singleprod__main-right--details---beskrivning"><span>Kort beskrivning:</span> En fantastisk, underhållande bok som har sålts i stora antal världen runt om... <span class="readmore">Läs mer</span></p>
                 </div>
             </div>
-            
+        </div>
+
+        <div class="singleprod__bottom">
+            <div class="singleprod__bottom-menu">
+                <div class="beskrivning active">Produktbeskrivning</div>
+                <div class="bedomning">Ge din bedömning</div>
+                <div class="upplagor">Andra upplagor</div>
+            </div>
+            <div class="singleprod__bottom-info">
+                <div class="singleprod__bottom-info--left">
+                    <h1 class="singleprod__bottom-info--left---title">Produktbeskrivning</h1>
+                    <p class="singleprod__bottom-info--left---desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque explicabo dolore obcaecati vitae illum illo tempore iusto, vel aliquam corporis? Vero, debitis eaque veritatis ullam beatae qui dolorem quis ducimus quas? Cupiditate quia minus quasi voluptatibus enim iusto eum eius?</p>
+                    <p class="singleprod__bottom-info--left---desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita tempora exercitationem molestiae impedit asperiores ratione atque fugit. Incidunt quas corporis explicabo nobis laborum labore nulla id sit quo, animi modi?</p>
+                </div>
+                <div class="singleprod__bottom-info--right">
+                    <h2 class="singleprod__bottom-info--right---title">Produktdetaljer</h2>
+                    <p class="singleprod__bottom-info--right---forfattare"><span>Författare:</span> Robert W. Sebesta</p>
+                    <p class="singleprod__bottom-info--right---format"><span>Format:</span> Softback</p>
+                    <p class="singleprod__bottom-info--right---sidor"><span>Antal sidor:</span> 809</p>
+                    <p class="singleprod__bottom-info--right---vikt"><span>Vikt:</span> 463 gram</p>
+                    <p class="singleprod__bottom-info--right---datum"><span>Publiceringsdatum:</span> 2018-10-16</p>
+                </div>
+            </div>
         </div>
 
     </section>

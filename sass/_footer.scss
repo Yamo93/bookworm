@@ -23,23 +23,10 @@
         display: flex;
         justify-content: space-between;
 
-        &-icon {
+        .icon {
             cursor: pointer;
             width: 40px;
             height: 40px;
-            // background-color: $orange;
-
-            // &:nth-child(1) {
-            //     background-image: url(../img/social_icons/twitter_icon_final.svg);
-            // }
-
-            // &:nth-child(2) {
-            //     background-color: red;
-            // }
-
-            // &:nth-child(3) {
-            //     background-color: red;
-            // }
         }
     }
 

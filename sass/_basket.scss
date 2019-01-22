@@ -1,7 +1,15 @@
-.basket {
+.basket, .results {
     width: 100%;
     height: 100%;
     padding: 5rem 8rem;
+
+    @media screen and (max-width: 700px) {
+        padding: 6rem;
+    }
+
+    @media screen and (max-width: 500px) {
+        padding: 2rem;
+    }
 
     &__title {
         width: 150px;
@@ -11,15 +19,24 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
+
+        @media screen and (max-width: 1025px) {
+            flex-direction: column-reverse;
+        }
     }
 
     .product {
         border-bottom: 1px dotted rgba(0, 0, 0, .4);
     }
 
-    &__left {
+    &__left, &__area {
         width: 60%;
         // background-color: #EEE;
+
+        @media screen and (max-width: 975px) {
+            width: 80%;
+            margin: 0 auto;
+        }
 
         &-topbar {
             width: 100%;
@@ -29,6 +46,10 @@
             padding-right: 5%;
             border-top: 1px dotted rgba(0, 0, 0, .4);
             border-bottom: 1px dotted rgba(0, 0, 0, .4);
+
+            @media screen and (max-width: 600px) {
+                display: none;
+            }
 
             &--proddesc, &--quantity, &--total {
                 font-size: 2rem;
@@ -56,8 +77,17 @@
             padding: 2rem 0;
             padding-right: 5%;
 
+            @media screen and (max-width: 750px) {
+                flex-direction: column;
+            }
+
             &--desc {
                 width: 70%;
+
+                @media screen and (max-width: 975px) {
+                    width: 100%;
+                    margin: 0 auto;
+                }
 
                 &---title {
                     font-family: $secondary-font;
@@ -106,13 +136,23 @@
             display: flex;
             // justify-content: space-between;
 
+            @media screen and (max-width: 900px) {
+                flex-direction: column;
+            }
+
             &--img {
                 width: 30%;
+                min-width: 340px;
                 height: 250px;
                 background-image: url(../img/products/book1_front.png);
-                background-size: cover;
+                background-size: contain;
+                background-repeat: no-repeat;
                 background-position: center;
                 margin-right: 5%;
+
+                @media screen and (max-width: 900px) {
+                    width: 80%;
+                }
             }
 
             &--details {
@@ -143,12 +183,42 @@
                         cursor: pointer;
                     }
                 }
+
+                .delete_from_basket {
+                    cursor: pointer;
+                    margin-top: 1rem;
+                    margin-bottom: 3rem;
+                    font-size: 2rem;
+                    text-align: center;
+                    background-color: $red;
+                    color: $white;
+                    padding: .5rem 1rem;
+                    width: 12rem;
+                    transition: all .3s;
+
+                    &:hover {
+                        background-color: darken($red, 15%);
+                    }
+                }
             }
         }
     }
 
     &__right {
         width: 35%;
+
+        @media screen and (max-width: 975px) {
+            width: 80%;
+            margin: 3rem auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 500px) {
+            width: 100%;
+            margin: 0 auto;
+        }
 
         &-box {
             width: 80%;
@@ -177,7 +247,7 @@
                 align-items: center;
                 width: 100%;
                 
-                .name {
+                &---name {
                     font-family: $secondary-font;
                 }
                 
@@ -186,36 +256,51 @@
             &--frakt {
                 border-bottom: 1px dotted rgba(0, 0, 0, .4);
 
-                .value {
+                &---value {
                     color: $lightgreen;
                 }
             }
 
             .checkout {
-                border: 1px solid orange;
-                background-color: $darkblue;
-                color: $orange;
-            }
-        }
+                &:link, &:visited {
+                    border: 1px solid orange;
+                    background-color: $darkblue;
+                    color: $orange;
+                }
 
-        .continue, .checkout {
-            width: 80%;
-            text-align: center;
-            height: auto;
-            cursor: pointer;
-            display: block;
-            margin: 40px auto;
-            margin-bottom: 20px;
-            border-radius: 30px;
-            padding: 1.5rem 4rem;
-            font: inherit;
-            font-size: 2.2rem;
-        }
-        
-        .continue {
-            border: 1px solid $darkblue;
-            background-color: $orange;
-            color: $darkblue;
+                &:hover, &:active {
+                    background-color: lighten($darkblue, 10%);
+                }
+            }
+
+            .continue, .checkout {
+                &:link, &:visited {
+                    width: 80%;
+                    text-align: center;
+                    height: auto;
+                    cursor: pointer;
+                    display: block;
+                    margin: 40px auto;
+                    margin-bottom: 20px;
+                    border-radius: 30px;
+                    padding: 1.5rem 4rem;
+                    font: inherit;
+                    font-size: 2.2rem;
+                    transition: all .3s;
+                }
+            }
+
+            .continue {
+                &:link, &:visited {
+                    border: 1px solid $darkblue;
+                    background-color: $orange;
+                    color: $darkblue;
+                }
+
+                &:hover, &:active {
+                    background-color: darken($orange, 15%);
+                }
+            }
         }
     }
 }

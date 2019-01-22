@@ -1,0 +1,78 @@
+.modal {
+    display: none;
+    // display: block;
+    z-index: 10;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45vw;
+    height: 90vh;
+    padding: 4rem 8rem;
+    padding-top: 8rem;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: center;
+    background-color: $white;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, .2);
+
+    @media screen and (max-width: 900px) {
+        width: 80vw;
+        padding: 3rem 6rem;
+    }
+
+    @media screen and (max-width: 400px) {
+        width: 90vw;
+        padding: 2rem;
+    }
+
+    .closemodal, &__right, &__left {
+        cursor: pointer;
+        color: $darkblue;
+        font-size: 5rem;
+        position: fixed;
+        top: 0;
+        transform: translateX(-50%);
+        width: 30px;
+    }
+    
+    .closemodal {
+        left: 50%;
+    }
+
+    &__left, &__right {
+        font-size: 4rem;
+        color: $lightgreen;
+        top: 45%;
+        transform: translateY(-50%);
+    }
+
+    &__left {
+        left: 2rem;
+    }
+
+    &__pic {
+        width: 100%;
+        height: 100%;
+        // background-image: url(../img/products/book1_front.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    &__right {
+        right: 2rem;
+    }
+}
+
+.backdrop {
+    // display: block;
+    display: none;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .4);
+}

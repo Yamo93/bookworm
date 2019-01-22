@@ -3,6 +3,10 @@
     height: 100%;
     padding: 5rem 10rem;
 
+    @media screen and (max-width: 900px) {
+        padding: 3rem 5rem;
+    }
+
     &__title {
         font-family: $secondary-font;
         font-size: 2rem;
@@ -17,10 +21,25 @@
     .wrapper {
         display: flex;
         justify-content: space-between;
+
+        @media screen and (max-width: 900px) {
+            flex-wrap: wrap;
+        }
     }
 
     &__box {
         width: 25%;
+        min-width: 200px;
+
+        @media screen and (max-width: 900px) {
+            margin: 2rem;
+        }
+
+        @media screen and (max-width: 550px) {
+            width: 70%;
+            margin: 0 auto;
+            margin-bottom: 4rem;
+        }
 
         &-img {
                 width: 100%;

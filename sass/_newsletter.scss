@@ -26,12 +26,17 @@
 
     &__input, &__btn {
         width: 30%;
+        min-width: 250px;
         margin: 0 auto;
         display: block;
         border: .5px solid rgba(0, 0, 0, .6);
         padding: 1.5rem 2rem;
         font: inherit;
         font-size: 1.8rem;
+
+        @media screen and (max-width: 400px) {
+            min-width: 200px;
+        }
     }
 
     &__btn {

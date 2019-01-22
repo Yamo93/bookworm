@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg width="300" height="150" version="1.1" viewBox="0 0 79.375 39.688" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<svg width="300" height="300" version="1.1" viewBox="0 0 79.375 79.375" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
  <metadata>
   <rdf:RDF>
    <cc:Work rdf:about="">
@@ -10,12 +10,9 @@
    </cc:Work>
   </rdf:RDF>
  </metadata>
- <g transform="translate(0 -257.31)">
-  <path d="m9.9128 273.39 11.117 19.012h39.605l9.2643-18.524z" fill="#fff" stroke="#ff9934" stroke-width="4.6337"/>
-  <g fill="none">
-   <path d="m33.537 259-6.9482 13.893" stroke="#000" stroke-width=".30892px"/>
-   <path d="m47.038 259.3 9.5913 14.276" stroke="#ff9934" stroke-width="3.2735"/>
-   <path d="m33.537 259-6.9482 13.893" stroke="#ff9934" stroke-width="3.0892"/>
-  </g>
+ <g transform="translate(0 -217.62)" stroke="#096">
+  <path d="m6.4837 253 12.396 38.451h44.16l10.33-37.465z" fill-opacity="0" stroke-width="6.9585"/>
+  <path d="m43.026 220.87 19.033 31.591" fill="none" stroke-width="6.8598"/>
+  <path d="m34.372 220.67-16.116 32.567" fill="none" stroke-width="7.203"/>
  </g>
 </svg>

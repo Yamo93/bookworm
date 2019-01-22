@@ -1,0 +1,55 @@
+.results {
+    width: 100%;
+    margin: 0 auto;
+    padding: 5rem 15rem;
+    display: block;
+
+    &__title {
+        width: 140px;
+    }
+
+    &__state {
+        color: $darkblue;
+        font-size: 2.4rem;
+        margin-bottom: 4rem;
+
+        span {
+            color: $lightgreen;
+        }
+    }
+
+    &__area {
+        width: 100%;
+
+        .add_to_basket, .add_to_wishlist {
+            cursor: pointer;
+            display: inline-block;
+            padding: 1rem 1.5rem;
+            border-radius: 30px;
+            margin: 2rem 0;
+            font-size: 1.6rem;
+            transition: all .3s;
+        }
+        
+        .add_to_basket {
+            margin-right: 1rem;
+            background-color: $lightgreen;
+            border: .5px solid $white;
+            color: $white;
+
+            &:hover {
+                background-color: lighten($lightgreen, 10%);
+            }
+        }
+        
+        .add_to_wishlist {
+            background-color: $orange;
+            color: $darkblue;
+            border: .5px solid $darkblue;
+
+            &:hover {
+                background-color: darken($orange, 15%);
+            }
+        }
+    }
+}
