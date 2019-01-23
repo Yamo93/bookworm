@@ -582,13 +582,16 @@ function addItemToBasket(e) {
     console.log('adding');
     if (e.target.matches('.product__basketbtn')) {
         pushBook(e.target.id);
+        showAlert();
     } 
     if (e.target.matches('.singleprod__main-right--buttons---checkout')) {
         pushBook(e.target.id);
+        showAlert();
     }
-
+    
     if (e.target.matches('.add_to_basket')) {
         pushBook(e.target.dataset.id);
+        showAlert();
     }
 
     function pushBook(bookID) {
@@ -612,13 +615,28 @@ function addItemToBasket(e) {
             `;
 
             document.querySelector('.minibasket__books').insertAdjacentHTML('afterbegin', newBook);
+
+            document.querySelector('.alert_bar').classList.add('display_alert');
+            document.querySelector('.alert_bar').classList.remove('danger_alert');
+            document.querySelector('.alert_bar').classList.add('success_alert');
+            document.querySelector('.alert_bar').innerHTML = `Boken <span>"${books[bookID].title}"</span> har lagts till din varukorg!`;
+            
+            setTimeout(function() {
+                document.querySelector('.alert_bar').classList.remove('display_alert');
+            }, 5000);
         }
     }
 
     updateSum();
 
     document.querySelector('.basket_icon').dataset.items = storage.length;
+
+    function showAlert() {
+    }
+
 }
+
+
 
 function removeItemFromBasket(e) {
     if (e.target.matches('.delete_from_basket')) {
@@ -648,6 +666,16 @@ function removeItemFromBasket(e) {
             }
             console.log(storage);
             localStorage.setItem('basket', JSON.stringify(storage));
+            console.log(books);
+
+            document.querySelector('.alert_bar').classList.add('display_alert');
+            document.querySelector('.alert_bar').classList.remove('success_alert');
+            document.querySelector('.alert_bar').classList.add('danger_alert');
+            document.querySelector('.alert_bar').innerHTML = `Boken <span>"${books['book' + e.target.dataset.id].title}"</span> har tagits bort från din varukorg!`;
+            
+            setTimeout(function() {
+                document.querySelector('.alert_bar').classList.remove('display_alert');
+            }, 5000);
         });
 
         if (document.querySelector('.basket__left')) {
@@ -663,6 +691,7 @@ function removeItemFromBasket(e) {
         updateSum();
 
         document.querySelector('.basket_icon').dataset.items = storage.length;
+
     }
 }
 

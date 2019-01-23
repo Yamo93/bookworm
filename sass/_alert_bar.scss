@@ -1,0 +1,44 @@
+.alert_bar {
+    z-index: 50;
+    box-shadow: 1px 1px 1.5px rgba(0, 0, 0, .2);
+    width: 100%;
+    height: 10vh;
+    transform: translateY(10vh);
+    position: fixed;
+    bottom: 0;
+    // padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    color: $white;
+    // background-color: $lightgreen;
+    // background-color: $red;
+    transition: all .6s;
+
+    span {
+        margin: 0 5px;
+        font-weight: 600;
+        // color: $orange;
+        // color: $darkblue;
+    }
+}
+
+.display_alert {
+    transform: translateY(0);
+}
+
+.success_alert {
+    background-color: $lightgreen;
+    span {
+        color: $orange;
+    }
+}
+
+.danger_alert {
+    background-color: $red;
+    span {
+        color: $darkblue;
+    }
+}
