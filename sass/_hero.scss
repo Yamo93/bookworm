@@ -279,6 +279,7 @@
                     
                     &::after {
                         content: attr(data-items);
+                        cursor: pointer;
                         position: absolute;
                         top: .5rem;
                         right: 0;
@@ -307,7 +308,7 @@
                     height: 90px;
                 }
 
-                .minibasket {
+                .minibasket, .wishlist {
                     display: none;
                     z-index: 20;
                     position: absolute;
@@ -315,6 +316,8 @@
                     left: -200%;
                     width: 350px;
                     height: auto;
+                    max-height: 280px;
+                    overflow-y: scroll;
                     background-color: #DEDEDE;
                     box-shadow: 1px 2px 2px rgba(0, 0, 0, .3);
 
@@ -478,6 +481,94 @@
                                             &:hover {
                                                 background-color: darken($lightgreen, 10%);
                                             }
+                            }
+                        }
+                    }
+                }
+
+                .wishlist {
+                    display: block;
+                    left: -50%;
+                    background-color: $white;
+
+                    &__books {
+                        
+                        &-book {
+                            padding: 2rem;
+                            display: flex;
+                            justify-content: space-between;
+                            border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+                            &--img {
+                                background-image: url(../img/products/book1_front.png);
+                                background-size: contain;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                width: 20%;
+                                height: auto;
+                            }
+
+                            &--desc {
+                                width: 75%;
+
+                                &---title {
+                                    font-size: 1.6rem;
+                                    margin-bottom: .3rem;
+                                }
+                                
+                                &---author {
+                                    font-size: 1.4rem;
+                                    margin-bottom: .2rem;
+                                }
+                                
+                                &---price {
+                                    font-size: 2rem;
+                                    font-weight: 600;
+                                    margin-bottom: .1rem;
+                                    color: $lightgreen;
+                                }
+
+                                &---basket_btn {
+                                    cursor: pointer;
+                                    width: 80%;
+                                    padding: .5rem 1rem;
+                                    background-color: $lightgreen;
+                                    border: 1px solid $white;
+                                    color: $white;
+                                    font: inherit;
+                                    font-size: 1.4rem;
+                                    transition: all .3s;
+
+                                    &:hover {
+                                        background-color: lighten($lightgreen, 10%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &__bottom {
+                        padding: 1.5rem 1.5rem;
+                        width: 100%;
+                        height: 100%;
+
+                        &-link {
+
+                            &:link, &:visited {
+                                display: block;
+                                background-color: $orange;
+                                color: #333;
+                                width: 100%;
+                                padding: 1rem;
+                                text-align: center;
+                                font-size: 1.6rem;
+                                font-weight: 600;
+                                height: 100%;
+                                transition: all .3s;
+                            }
+
+                            &:hover, &:active {
+                                background-color: darken($orange, 10%);
                             }
                         }
                     }

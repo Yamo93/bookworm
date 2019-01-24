@@ -242,6 +242,7 @@ body {
           position: relative; }
           .hero__menu-top--basket .basket_icon::after {
             content: attr(data-items);
+            cursor: pointer;
             position: absolute;
             top: .5rem;
             right: 0;
@@ -261,7 +262,7 @@ body {
         .hero__menu-top--basket .basket {
           width: 90px;
           height: 90px; }
-        .hero__menu-top--basket .minibasket {
+        .hero__menu-top--basket .minibasket, .hero__menu-top--basket .wishlist {
           display: none;
           z-index: 20;
           position: absolute;
@@ -269,30 +270,32 @@ body {
           left: -200%;
           width: 350px;
           height: auto;
+          max-height: 280px;
+          overflow-y: scroll;
           background-color: #DEDEDE;
           box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3); }
-          .hero__menu-top--basket .minibasket__top {
+          .hero__menu-top--basket .minibasket__top, .hero__menu-top--basket .wishlist__top {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 3px 8px; }
-            .hero__menu-top--basket .minibasket__top-title {
+            .hero__menu-top--basket .minibasket__top-title, .hero__menu-top--basket .wishlist__top-title {
               font-size: 1.6rem;
               color: #003333; }
-            .hero__menu-top--basket .minibasket__top-link {
+            .hero__menu-top--basket .minibasket__top-link, .hero__menu-top--basket .wishlist__top-link {
               font-weight: 600;
               font-size: 1.2rem;
               text-transform: uppercase; }
-          .hero__menu-top--basket .minibasket__alert {
+          .hero__menu-top--basket .minibasket__alert, .hero__menu-top--basket .wishlist__alert {
             background-color: #009966;
             display: flex; }
-            .hero__menu-top--basket .minibasket__alert-msg {
+            .hero__menu-top--basket .minibasket__alert-msg, .hero__menu-top--basket .wishlist__alert-msg {
               padding: 1.5rem;
               font-size: 1.6rem;
               text-align: center;
               color: #FEFEFE;
               width: 90%; }
-            .hero__menu-top--basket .minibasket__alert-close {
+            .hero__menu-top--basket .minibasket__alert-close, .hero__menu-top--basket .wishlist__alert-close {
               width: 10%;
               background-color: #FF9933;
               display: flex;
@@ -300,64 +303,64 @@ body {
               align-items: center;
               font-size: 2rem;
               font-weight: 600; }
-          .hero__menu-top--basket .minibasket__books {
+          .hero__menu-top--basket .minibasket__books, .hero__menu-top--basket .wishlist__books {
             box-shadow: 1px 1px 1.5px rgba(0, 0, 0, 0.2); }
-            .hero__menu-top--basket .minibasket__books .book {
+            .hero__menu-top--basket .minibasket__books .book, .hero__menu-top--basket .wishlist__books .book {
               display: flex;
               justify-content: space-between;
               padding: 1rem; }
-              .hero__menu-top--basket .minibasket__books .book:nth-child(odd) {
+              .hero__menu-top--basket .minibasket__books .book:nth-child(odd), .hero__menu-top--basket .wishlist__books .book:nth-child(odd) {
                 background-color: #FEFEFE; }
-              .hero__menu-top--basket .minibasket__books .book__img {
+              .hero__menu-top--basket .minibasket__books .book__img, .hero__menu-top--basket .wishlist__books .book__img {
                 width: 15%;
                 height: 95px;
                 background-image: url(../img/products/book1_front.png);
                 background-size: cover;
                 background-position: center; }
-              .hero__menu-top--basket .minibasket__books .book__details {
+              .hero__menu-top--basket .minibasket__books .book__details, .hero__menu-top--basket .wishlist__books .book__details {
                 width: 60%; }
-                .hero__menu-top--basket .minibasket__books .book__details-title {
+                .hero__menu-top--basket .minibasket__books .book__details-title, .hero__menu-top--basket .wishlist__books .book__details-title {
                   font-size: 1.6rem;
                   color: #003333;
                   margin-bottom: 5px; }
-                .hero__menu-top--basket .minibasket__books .book__details-label {
+                .hero__menu-top--basket .minibasket__books .book__details-label, .hero__menu-top--basket .wishlist__books .book__details-label {
                   font-size: 1.4rem;
                   margin-right: 3px; }
-                .hero__menu-top--basket .minibasket__books .book__details-input {
+                .hero__menu-top--basket .minibasket__books .book__details-input, .hero__menu-top--basket .wishlist__books .book__details-input {
                   width: 50px;
                   height: 30px;
                   font: inherit;
                   color: #003333;
                   font-size: 1.6rem;
                   margin-bottom: 5px; }
-                .hero__menu-top--basket .minibasket__books .book__details-price {
+                .hero__menu-top--basket .minibasket__books .book__details-price, .hero__menu-top--basket .wishlist__books .book__details-price {
                   font-size: 1.6rem;
                   font-weight: 600;
                   color: #003333; }
-              .hero__menu-top--basket .minibasket__books .book__remove {
+              .hero__menu-top--basket .minibasket__books .book__remove, .hero__menu-top--basket .wishlist__books .book__remove {
                 cursor: pointer;
                 width: 20%;
                 font-size: 1.2rem;
                 font-weight: 600;
                 color: #FF3333; }
-          .hero__menu-top--basket .minibasket__total {
+          .hero__menu-top--basket .minibasket__total, .hero__menu-top--basket .wishlist__total {
             padding: 1.5rem; }
-            .hero__menu-top--basket .minibasket__total-top {
+            .hero__menu-top--basket .minibasket__total-top, .hero__menu-top--basket .wishlist__total-top {
               display: flex;
               justify-content: space-between;
               margin-bottom: 10px; }
-              .hero__menu-top--basket .minibasket__total-top--quantity {
+              .hero__menu-top--basket .minibasket__total-top--quantity, .hero__menu-top--basket .wishlist__total-top--quantity {
                 font-size: 1.2rem; }
-                .hero__menu-top--basket .minibasket__total-top--quantity span {
+                .hero__menu-top--basket .minibasket__total-top--quantity span, .hero__menu-top--basket .wishlist__total-top--quantity span {
                   font-weight: 600; }
-              .hero__menu-top--basket .minibasket__total-top--total {
+              .hero__menu-top--basket .minibasket__total-top--total, .hero__menu-top--basket .wishlist__total-top--total {
                 font-size: 1.4rem; }
-                .hero__menu-top--basket .minibasket__total-top--total span {
+                .hero__menu-top--basket .minibasket__total-top--total span, .hero__menu-top--basket .wishlist__total-top--total span {
                   font-weight: 600; }
-            .hero__menu-top--basket .minibasket__total .bottom {
+            .hero__menu-top--basket .minibasket__total .bottom, .hero__menu-top--basket .wishlist__total .bottom {
               display: flex;
               justify-content: space-around; }
-              .hero__menu-top--basket .minibasket__total .bottom .varukorg, .hero__menu-top--basket .minibasket__total .bottom .kassa {
+              .hero__menu-top--basket .minibasket__total .bottom .varukorg, .hero__menu-top--basket .minibasket__total .bottom .kassa, .hero__menu-top--basket .wishlist__total .bottom .varukorg, .hero__menu-top--basket .wishlist__total .bottom .kassa {
                 cursor: pointer;
                 display: block;
                 padding: .5rem 1.5rem;
@@ -365,18 +368,76 @@ body {
                 font: inherit;
                 font-size: 1.4rem;
                 transition: all .3s; }
-              .hero__menu-top--basket .minibasket__total .bottom .varukorg {
+              .hero__menu-top--basket .minibasket__total .bottom .varukorg, .hero__menu-top--basket .wishlist__total .bottom .varukorg {
                 background-color: #FF9933;
                 color: #003333;
                 border: 1px solid #003333; }
-                .hero__menu-top--basket .minibasket__total .bottom .varukorg:hover {
+                .hero__menu-top--basket .minibasket__total .bottom .varukorg:hover, .hero__menu-top--basket .wishlist__total .bottom .varukorg:hover {
                   background-color: #ffb366; }
-              .hero__menu-top--basket .minibasket__total .bottom .kassa {
+              .hero__menu-top--basket .minibasket__total .bottom .kassa, .hero__menu-top--basket .wishlist__total .bottom .kassa {
                 background-color: #009966;
                 color: #FEFEFE;
                 border: 1px solid #FEFEFE; }
-                .hero__menu-top--basket .minibasket__total .bottom .kassa:hover {
+                .hero__menu-top--basket .minibasket__total .bottom .kassa:hover, .hero__menu-top--basket .wishlist__total .bottom .kassa:hover {
                   background-color: #006644; }
+        .hero__menu-top--basket .wishlist {
+          display: block;
+          left: -50%;
+          background-color: #FEFEFE; }
+          .hero__menu-top--basket .wishlist__books-book {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+            .hero__menu-top--basket .wishlist__books-book--img {
+              background-image: url(../img/products/book1_front.png);
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
+              width: 20%;
+              height: auto; }
+            .hero__menu-top--basket .wishlist__books-book--desc {
+              width: 75%; }
+              .hero__menu-top--basket .wishlist__books-book--desc---title {
+                font-size: 1.6rem;
+                margin-bottom: .3rem; }
+              .hero__menu-top--basket .wishlist__books-book--desc---author {
+                font-size: 1.4rem;
+                margin-bottom: .2rem; }
+              .hero__menu-top--basket .wishlist__books-book--desc---price {
+                font-size: 2rem;
+                font-weight: 600;
+                margin-bottom: .1rem;
+                color: #009966; }
+              .hero__menu-top--basket .wishlist__books-book--desc---basket_btn {
+                cursor: pointer;
+                width: 80%;
+                padding: .5rem 1rem;
+                background-color: #009966;
+                border: 1px solid #FEFEFE;
+                color: #FEFEFE;
+                font: inherit;
+                font-size: 1.4rem;
+                transition: all .3s; }
+                .hero__menu-top--basket .wishlist__books-book--desc---basket_btn:hover {
+                  background-color: #00cc88; }
+          .hero__menu-top--basket .wishlist__bottom {
+            padding: 1.5rem 1.5rem;
+            width: 100%;
+            height: 100%; }
+            .hero__menu-top--basket .wishlist__bottom-link:link, .hero__menu-top--basket .wishlist__bottom-link:visited {
+              display: block;
+              background-color: #FF9933;
+              color: #333;
+              width: 100%;
+              padding: 1rem;
+              text-align: center;
+              font-size: 1.6rem;
+              font-weight: 600;
+              height: 100%;
+              transition: all .3s; }
+            .hero__menu-top--basket .wishlist__bottom-link:hover, .hero__menu-top--basket .wishlist__bottom-link:active {
+              background-color: #ff8000; }
     .hero__menu-bottom {
       width: 100%;
       height: 8vh;

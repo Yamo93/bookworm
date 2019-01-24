@@ -25,7 +25,7 @@ if (document.querySelector('.singleprod')) {
     document.querySelector('.singleprod').addEventListener('click', openModal);
 }
 
-document.querySelector('.minibasket_icon').addEventListener('click', openMiniBasket);
+document.querySelector('.basket_icon').addEventListener('click', openMiniBasket);
 
 document.querySelector('.hamburger').addEventListener('click', openDropdown);
 
@@ -405,6 +405,20 @@ let sum = 0;
 let moms = 10;
 
 function loadBasket() {
+    // Loading in the latest version of LS if there is one
+    storage = JSON.parse(localStorage.getItem('basket')) || [];
+
+    // Starting off by keeping big basket empty
+    if (document.querySelector('.basket__left')) {
+        document.querySelector('.basket__left').innerHTML = `<div class="basket__left-topbar">
+        <h3 class="basket__left-topbar--proddesc">Produktbeskrivning</h3>
+        <h3 class="basket__left-topbar--quantity">Antal</h3>
+        <h3 class="basket__left-topbar--total">Totalt</h3>
+        </div>`;
+    }
+
+    // Emptying minibasket initially
+    document.querySelector('.minibasket__books').innerHTML = '';
 
     if (storage) {
         storage.forEach(item => {
@@ -639,44 +653,38 @@ function addItemToBasket(e) {
 
 
 function removeItemFromBasket(e) {
-    if (e.target.matches('.delete_from_basket')) {
+    if (e.target.matches('.delete_from_basket') || e.target.matches('.book__remove')) {
         console.log(e.target.dataset.id);
         storage.forEach((item, index) => {
+            console.log(item.id);
             if (e.target.dataset.id == item.id) {
                 console.log(storage);
                 storage.splice(index, 1);
             }
             console.log(storage);
             localStorage.setItem('basket', JSON.stringify(storage));
-        })
+            loadBasket();
+            updateSum();
+            console.log('basket was loaded');
+        });
+
+        document.querySelector('.alert_bar').classList.add('display_alert');
+        document.querySelector('.alert_bar').classList.remove('success_alert');
+        document.querySelector('.alert_bar').classList.add('danger_alert');
+        document.querySelector('.alert_bar').innerHTML = `Boken <span>"${books['book' + e.target.dataset.id].title}"</span> har tagits bort från din varukorg!`;
+        
+        setTimeout(function() {
+            document.querySelector('.alert_bar').classList.remove('display_alert');
+        }, 5000);
+    }
+    else if (e.target.matches('.delete_from_basket')) {
         document.querySelector('.basket__left').innerHTML = `<div class="basket__left-topbar">
         <h3 class="basket__left-topbar--proddesc">Produktbeskrivning</h3>
         <h3 class="basket__left-topbar--quantity">Antal</h3>
         <h3 class="basket__left-topbar--total">Totalt</h3>
     </div>`;
     document.querySelector('.minibasket__books').innerHTML = '';
-        loadBasket();
-        updateSum();
     } else if (e.target.matches('.book__remove')) {
-        console.log(e.target.dataset.id);
-        storage.forEach((item, index) => {
-            if (e.target.dataset.id == item.id) {
-                console.log(storage);
-                storage.splice(index, 1);
-            }
-            console.log(storage);
-            localStorage.setItem('basket', JSON.stringify(storage));
-            console.log(books);
-
-            document.querySelector('.alert_bar').classList.add('display_alert');
-            document.querySelector('.alert_bar').classList.remove('success_alert');
-            document.querySelector('.alert_bar').classList.add('danger_alert');
-            document.querySelector('.alert_bar').innerHTML = `Boken <span>"${books['book' + e.target.dataset.id].title}"</span> har tagits bort från din varukorg!`;
-            
-            setTimeout(function() {
-                document.querySelector('.alert_bar').classList.remove('display_alert');
-            }, 5000);
-        });
 
         if (document.querySelector('.basket__left')) {
             document.querySelector('.basket__left').innerHTML = `<div class="basket__left-topbar">
@@ -685,10 +693,6 @@ function removeItemFromBasket(e) {
             <h3 class="basket__left-topbar--total">Totalt</h3>
         </div>`;
         }
-
-    document.querySelector('.minibasket__books').innerHTML = '';
-        loadBasket();
-        updateSum();
 
         document.querySelector('.basket_icon').dataset.items = storage.length;
 
@@ -713,7 +717,6 @@ if (document.querySelector('.results')) {
 }
 
 function lookSearchResults() {
-    console.log(this.value);
     let booktitles = Object.values(books).map(elem => elem.title.toLowerCase());
 
     document.querySelector('.search__suggest').innerHTML = '';
@@ -749,8 +752,6 @@ function lookSearchResults() {
             });
             // save keyword and results in LS
             localStorage.setItem('storedResults', JSON.stringify(storedResults));
-            console.log(storedResults);
-            console.log('searchquery is ' + JSON.parse(localStorage.getItem('searchquery')));
             
             // show them in a new result page which will be results.html. grab them from Local Storage there and display them
         }
