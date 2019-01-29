@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box; }
 
+*:focus {
+  outline: none; }
+
 ul {
   list-style: none; }
 
@@ -228,7 +231,8 @@ body {
         @media screen and (max-width: 580px) {
           .hero__menu-top--basket {
             width: 120px;
-            height: 40px; } }
+            height: 40px;
+            top: 2rem; } }
         .hero__menu-top--basket .minibasket_icon, .hero__menu-top--basket .heart_icon {
           cursor: pointer;
           display: block;
@@ -238,9 +242,9 @@ body {
             .hero__menu-top--basket .minibasket_icon, .hero__menu-top--basket .heart_icon {
               width: 40px;
               height: 40px; } }
-        .hero__menu-top--basket .basket_icon {
+        .hero__menu-top--basket .basket_icon, .hero__menu-top--basket .wishlist_icon {
           position: relative; }
-          .hero__menu-top--basket .basket_icon::after {
+          .hero__menu-top--basket .basket_icon::after, .hero__menu-top--basket .wishlist_icon::after {
             content: attr(data-items);
             cursor: pointer;
             position: absolute;
@@ -257,6 +261,8 @@ body {
             align-items: center;
             font-size: 1.2rem;
             font-weight: 600; }
+        .hero__menu-top--basket .wishlist_icon:after {
+          content: attr(data-wished); }
         .hero__menu-top--basket .minibasket_icon {
           position: relative; }
         .hero__menu-top--basket .basket {
@@ -274,6 +280,10 @@ body {
           overflow-y: scroll;
           background-color: #DEDEDE;
           box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3); }
+          @media screen and (max-width: 450px) {
+            .hero__menu-top--basket .minibasket, .hero__menu-top--basket .wishlist {
+              left: 50%;
+              transform: translateX(-50%); } }
           .hero__menu-top--basket .minibasket__top, .hero__menu-top--basket .wishlist__top {
             display: flex;
             justify-content: space-between;
@@ -381,9 +391,13 @@ body {
                 .hero__menu-top--basket .minibasket__total .bottom .kassa:hover, .hero__menu-top--basket .wishlist__total .bottom .kassa:hover {
                   background-color: #006644; }
         .hero__menu-top--basket .wishlist {
-          display: block;
-          left: -50%;
+          display: none;
+          left: -150%;
           background-color: #FEFEFE; }
+          @media screen and (max-width: 450px) {
+            .hero__menu-top--basket .wishlist {
+              left: 50%;
+              transform: translateX(-50%); } }
           .hero__menu-top--basket .wishlist__books-book {
             padding: 2rem;
             display: flex;
@@ -391,7 +405,7 @@ body {
             border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
             .hero__menu-top--basket .wishlist__books-book--img {
               background-image: url(../img/products/book1_front.png);
-              background-size: contain;
+              background-size: cover;
               background-position: center;
               background-repeat: no-repeat;
               width: 20%;
@@ -846,34 +860,34 @@ body {
           background-color: #FF9933;
           color: #003333; }
 
-.basket, .results {
+.basket, .results, .wishlistpage {
   width: 100%;
   height: 100%;
   padding: 5rem 8rem; }
   @media screen and (max-width: 700px) {
-    .basket, .results {
+    .basket, .results, .wishlistpage {
       padding: 6rem; } }
   @media screen and (max-width: 500px) {
-    .basket, .results {
+    .basket, .results, .wishlistpage {
       padding: 2rem; } }
-  .basket__title, .results__title {
+  .basket__title, .results__title, .wishlistpage__title {
     width: 150px; }
-  .basket .wrapper, .results .wrapper {
+  .basket .wrapper, .results .wrapper, .wishlistpage .wrapper {
     display: flex;
     justify-content: space-between;
     width: 100%; }
     @media screen and (max-width: 1025px) {
-      .basket .wrapper, .results .wrapper {
+      .basket .wrapper, .results .wrapper, .wishlistpage .wrapper {
         flex-direction: column-reverse; } }
-  .basket .product, .results .product {
+  .basket .product, .results .product, .wishlistpage .product {
     border-bottom: 1px dotted rgba(0, 0, 0, 0.4); }
-  .basket__left, .basket__area, .results__left, .results__area {
+  .basket__left, .basket__area, .results__left, .results__area, .wishlistpage__left, .wishlistpage__area {
     width: 60%; }
     @media screen and (max-width: 975px) {
-      .basket__left, .basket__area, .results__left, .results__area {
+      .basket__left, .basket__area, .results__left, .results__area, .wishlistpage__left, .wishlistpage__area {
         width: 80%;
         margin: 0 auto; } }
-    .basket__left-topbar, .basket__area-topbar, .results__left-topbar, .results__area-topbar {
+    .basket__left-topbar, .basket__area-topbar, .results__left-topbar, .results__area-topbar, .wishlistpage__left-topbar, .wishlistpage__area-topbar {
       width: 100%;
       display: flex;
       padding: 1.5rem 0;
@@ -881,45 +895,45 @@ body {
       border-top: 1px dotted rgba(0, 0, 0, 0.4);
       border-bottom: 1px dotted rgba(0, 0, 0, 0.4); }
       @media screen and (max-width: 600px) {
-        .basket__left-topbar, .basket__area-topbar, .results__left-topbar, .results__area-topbar {
+        .basket__left-topbar, .basket__area-topbar, .results__left-topbar, .results__area-topbar, .wishlistpage__left-topbar, .wishlistpage__area-topbar {
           display: none; } }
-      .basket__left-topbar--proddesc, .basket__left-topbar--quantity, .basket__left-topbar--total, .basket__area-topbar--proddesc, .basket__area-topbar--quantity, .basket__area-topbar--total, .results__left-topbar--proddesc, .results__left-topbar--quantity, .results__left-topbar--total, .results__area-topbar--proddesc, .results__area-topbar--quantity, .results__area-topbar--total {
+      .basket__left-topbar--proddesc, .basket__left-topbar--quantity, .basket__left-topbar--total, .basket__area-topbar--proddesc, .basket__area-topbar--quantity, .basket__area-topbar--total, .results__left-topbar--proddesc, .results__left-topbar--quantity, .results__left-topbar--total, .results__area-topbar--proddesc, .results__area-topbar--quantity, .results__area-topbar--total, .wishlistpage__left-topbar--proddesc, .wishlistpage__left-topbar--quantity, .wishlistpage__left-topbar--total, .wishlistpage__area-topbar--proddesc, .wishlistpage__area-topbar--quantity, .wishlistpage__area-topbar--total {
         font-size: 2rem;
         font-family: "Titillium Web", sans-serif;
         color: #003333; }
-      .basket__left-topbar--proddesc, .basket__area-topbar--proddesc, .results__left-topbar--proddesc, .results__area-topbar--proddesc {
+      .basket__left-topbar--proddesc, .basket__area-topbar--proddesc, .results__left-topbar--proddesc, .results__area-topbar--proddesc, .wishlistpage__left-topbar--proddesc, .wishlistpage__area-topbar--proddesc {
         width: 70%; }
-      .basket__left-topbar--quantity, .basket__area-topbar--quantity, .results__left-topbar--quantity, .results__area-topbar--quantity {
+      .basket__left-topbar--quantity, .basket__area-topbar--quantity, .results__left-topbar--quantity, .results__area-topbar--quantity, .wishlistpage__left-topbar--quantity, .wishlistpage__area-topbar--quantity {
         width: 15%; }
-      .basket__left-topbar--total, .basket__area-topbar--total, .results__left-topbar--total, .results__area-topbar--total {
+      .basket__left-topbar--total, .basket__area-topbar--total, .results__left-topbar--total, .results__area-topbar--total, .wishlistpage__left-topbar--total, .wishlistpage__area-topbar--total {
         width: 15%; }
-    .basket__left-info, .basket__area-info, .results__left-info, .results__area-info {
+    .basket__left-info, .basket__area-info, .results__left-info, .results__area-info, .wishlistpage__left-info, .wishlistpage__area-info {
       width: 100%;
       display: flex;
       padding: 2rem 0;
       padding-right: 5%; }
       @media screen and (max-width: 750px) {
-        .basket__left-info, .basket__area-info, .results__left-info, .results__area-info {
+        .basket__left-info, .basket__area-info, .results__left-info, .results__area-info, .wishlistpage__left-info, .wishlistpage__area-info {
           flex-direction: column; } }
-      .basket__left-info--desc, .basket__area-info--desc, .results__left-info--desc, .results__area-info--desc {
+      .basket__left-info--desc, .basket__area-info--desc, .results__left-info--desc, .results__area-info--desc, .wishlistpage__left-info--desc, .wishlistpage__area-info--desc {
         width: 70%; }
         @media screen and (max-width: 975px) {
-          .basket__left-info--desc, .basket__area-info--desc, .results__left-info--desc, .results__area-info--desc {
+          .basket__left-info--desc, .basket__area-info--desc, .results__left-info--desc, .results__area-info--desc, .wishlistpage__left-info--desc, .wishlistpage__area-info--desc {
             width: 100%;
             margin: 0 auto; } }
-        .basket__left-info--desc---title, .basket__area-info--desc---title, .results__left-info--desc---title, .results__area-info--desc---title {
+        .basket__left-info--desc---title, .basket__area-info--desc---title, .results__left-info--desc---title, .results__area-info--desc---title, .wishlistpage__left-info--desc---title, .wishlistpage__area-info--desc---title {
           font-family: "Titillium Web", sans-serif;
           font-size: 1.8rem;
           color: #009966;
           margin-bottom: 5px; }
-        .basket__left-info--desc---author, .basket__area-info--desc---author, .results__left-info--desc---author, .results__area-info--desc---author {
+        .basket__left-info--desc---author, .basket__area-info--desc---author, .results__left-info--desc---author, .results__area-info--desc---author, .wishlistpage__left-info--desc---author, .wishlistpage__area-info--desc---author {
           font-family: "Titillium Web", sans-serif;
           font-weight: 300;
           font-size: 2rem;
           color: #003333; }
-      .basket__left-info--quant, .basket__area-info--quant, .results__left-info--quant, .results__area-info--quant {
+      .basket__left-info--quant, .basket__area-info--quant, .results__left-info--quant, .results__area-info--quant, .wishlistpage__left-info--quant, .wishlistpage__area-info--quant {
         width: 15%; }
-        .basket__left-info--quant .prod_quantity, .basket__area-info--quant .prod_quantity, .results__left-info--quant .prod_quantity, .results__area-info--quant .prod_quantity {
+        .basket__left-info--quant .prod_quantity, .basket__area-info--quant .prod_quantity, .results__left-info--quant .prod_quantity, .results__area-info--quant .prod_quantity, .wishlistpage__left-info--quant .prod_quantity, .wishlistpage__area-info--quant .prod_quantity {
           width: 60px;
           height: 60px;
           display: flex;
@@ -929,20 +943,20 @@ body {
           font-family: inherit;
           padding: 5px;
           color: #003333; }
-      .basket__left-info--price, .basket__area-info--price, .results__left-info--price, .results__area-info--price {
+      .basket__left-info--price, .basket__area-info--price, .results__left-info--price, .results__area-info--price, .wishlistpage__left-info--price, .wishlistpage__area-info--price {
         width: 15%;
         font-family: "Titillium Web", sans-serif;
         font-size: 2.4rem;
         font-weight: 600;
         color: #003333; }
-    .basket__left-book, .basket__area-book, .results__left-book, .results__area-book {
+    .basket__left-book, .basket__area-book, .results__left-book, .results__area-book, .wishlistpage__left-book, .wishlistpage__area-book {
       width: 100%;
       padding-right: 5%;
       display: flex; }
       @media screen and (max-width: 900px) {
-        .basket__left-book, .basket__area-book, .results__left-book, .results__area-book {
+        .basket__left-book, .basket__area-book, .results__left-book, .results__area-book, .wishlistpage__left-book, .wishlistpage__area-book {
           flex-direction: column; } }
-      .basket__left-book--img, .basket__area-book--img, .results__left-book--img, .results__area-book--img {
+      .basket__left-book--img, .basket__area-book--img, .results__left-book--img, .results__area-book--img, .wishlistpage__left-book--img, .wishlistpage__area-book--img {
         width: 30%;
         min-width: 340px;
         height: 250px;
@@ -952,27 +966,27 @@ body {
         background-position: center;
         margin-right: 5%; }
         @media screen and (max-width: 900px) {
-          .basket__left-book--img, .basket__area-book--img, .results__left-book--img, .results__area-book--img {
+          .basket__left-book--img, .basket__area-book--img, .results__left-book--img, .results__area-book--img, .wishlistpage__left-book--img, .wishlistpage__area-book--img {
             width: 80%; } }
-      .basket__left-book--details, .basket__area-book--details, .results__left-book--details, .results__area-book--details {
+      .basket__left-book--details, .basket__area-book--details, .results__left-book--details, .results__area-book--details, .wishlistpage__left-book--details, .wishlistpage__area-book--details {
         margin-top: 15px; }
-        .basket__left-book--details---skick, .basket__left-book--details---format, .basket__left-book--details---sidor, .basket__left-book--details---vikt, .basket__left-book--details---datum, .basket__area-book--details---skick, .basket__area-book--details---format, .basket__area-book--details---sidor, .basket__area-book--details---vikt, .basket__area-book--details---datum, .results__left-book--details---skick, .results__left-book--details---format, .results__left-book--details---sidor, .results__left-book--details---vikt, .results__left-book--details---datum, .results__area-book--details---skick, .results__area-book--details---format, .results__area-book--details---sidor, .results__area-book--details---vikt, .results__area-book--details---datum {
+        .basket__left-book--details---skick, .basket__left-book--details---format, .basket__left-book--details---sidor, .basket__left-book--details---vikt, .basket__left-book--details---datum, .basket__area-book--details---skick, .basket__area-book--details---format, .basket__area-book--details---sidor, .basket__area-book--details---vikt, .basket__area-book--details---datum, .results__left-book--details---skick, .results__left-book--details---format, .results__left-book--details---sidor, .results__left-book--details---vikt, .results__left-book--details---datum, .results__area-book--details---skick, .results__area-book--details---format, .results__area-book--details---sidor, .results__area-book--details---vikt, .results__area-book--details---datum, .wishlistpage__left-book--details---skick, .wishlistpage__left-book--details---format, .wishlistpage__left-book--details---sidor, .wishlistpage__left-book--details---vikt, .wishlistpage__left-book--details---datum, .wishlistpage__area-book--details---skick, .wishlistpage__area-book--details---format, .wishlistpage__area-book--details---sidor, .wishlistpage__area-book--details---vikt, .wishlistpage__area-book--details---datum {
           font-size: 1.6rem;
           margin-bottom: 5px;
           color: #003333; }
-          .basket__left-book--details---skick span, .basket__left-book--details---format span, .basket__left-book--details---sidor span, .basket__left-book--details---vikt span, .basket__left-book--details---datum span, .basket__area-book--details---skick span, .basket__area-book--details---format span, .basket__area-book--details---sidor span, .basket__area-book--details---vikt span, .basket__area-book--details---datum span, .results__left-book--details---skick span, .results__left-book--details---format span, .results__left-book--details---sidor span, .results__left-book--details---vikt span, .results__left-book--details---datum span, .results__area-book--details---skick span, .results__area-book--details---format span, .results__area-book--details---sidor span, .results__area-book--details---vikt span, .results__area-book--details---datum span {
+          .basket__left-book--details---skick span, .basket__left-book--details---format span, .basket__left-book--details---sidor span, .basket__left-book--details---vikt span, .basket__left-book--details---datum span, .basket__area-book--details---skick span, .basket__area-book--details---format span, .basket__area-book--details---sidor span, .basket__area-book--details---vikt span, .basket__area-book--details---datum span, .results__left-book--details---skick span, .results__left-book--details---format span, .results__left-book--details---sidor span, .results__left-book--details---vikt span, .results__left-book--details---datum span, .results__area-book--details---skick span, .results__area-book--details---format span, .results__area-book--details---sidor span, .results__area-book--details---vikt span, .results__area-book--details---datum span, .wishlistpage__left-book--details---skick span, .wishlistpage__left-book--details---format span, .wishlistpage__left-book--details---sidor span, .wishlistpage__left-book--details---vikt span, .wishlistpage__left-book--details---datum span, .wishlistpage__area-book--details---skick span, .wishlistpage__area-book--details---format span, .wishlistpage__area-book--details---sidor span, .wishlistpage__area-book--details---vikt span, .wishlistpage__area-book--details---datum span {
             font-weight: 600; }
-        .basket__left-book--details---desc, .basket__area-book--details---desc, .results__left-book--details---desc, .results__area-book--details---desc {
+        .basket__left-book--details---desc, .basket__area-book--details---desc, .results__left-book--details---desc, .results__area-book--details---desc, .wishlistpage__left-book--details---desc, .wishlistpage__area-book--details---desc {
           font-size: 1.8rem;
           font-weight: 600;
           color: #003333;
           line-height: 1.3em; }
-          .basket__left-book--details---desc span, .basket__area-book--details---desc span, .results__left-book--details---desc span, .results__area-book--details---desc span {
+          .basket__left-book--details---desc span, .basket__area-book--details---desc span, .results__left-book--details---desc span, .results__area-book--details---desc span, .wishlistpage__left-book--details---desc span, .wishlistpage__area-book--details---desc span {
             color: #009966; }
-          .basket__left-book--details---desc span.readmore, .basket__area-book--details---desc span.readmore, .results__left-book--details---desc span.readmore, .results__area-book--details---desc span.readmore {
+          .basket__left-book--details---desc span.readmore, .basket__area-book--details---desc span.readmore, .results__left-book--details---desc span.readmore, .results__area-book--details---desc span.readmore, .wishlistpage__left-book--details---desc span.readmore, .wishlistpage__area-book--details---desc span.readmore {
             color: #FF9933;
             cursor: pointer; }
-        .basket__left-book--details .delete_from_basket, .basket__area-book--details .delete_from_basket, .results__left-book--details .delete_from_basket, .results__area-book--details .delete_from_basket {
+        .basket__left-book--details .delete_from_basket, .basket__area-book--details .delete_from_basket, .results__left-book--details .delete_from_basket, .results__area-book--details .delete_from_basket, .wishlistpage__left-book--details .delete_from_basket, .wishlistpage__area-book--details .delete_from_basket {
           cursor: pointer;
           margin-top: 1rem;
           margin-bottom: 3rem;
@@ -983,29 +997,29 @@ body {
           padding: .5rem 1rem;
           width: 12rem;
           transition: all .3s; }
-          .basket__left-book--details .delete_from_basket:hover, .basket__area-book--details .delete_from_basket:hover, .results__left-book--details .delete_from_basket:hover, .results__area-book--details .delete_from_basket:hover {
+          .basket__left-book--details .delete_from_basket:hover, .basket__area-book--details .delete_from_basket:hover, .results__left-book--details .delete_from_basket:hover, .results__area-book--details .delete_from_basket:hover, .wishlistpage__left-book--details .delete_from_basket:hover, .wishlistpage__area-book--details .delete_from_basket:hover {
             background-color: #e60000; }
-  .basket__right, .results__right {
+  .basket__right, .results__right, .wishlistpage__right {
     width: 35%; }
     @media screen and (max-width: 975px) {
-      .basket__right, .results__right {
+      .basket__right, .results__right, .wishlistpage__right {
         width: 80%;
         margin: 3rem auto;
         display: flex;
         justify-content: center;
         align-items: center; } }
     @media screen and (max-width: 500px) {
-      .basket__right, .results__right {
+      .basket__right, .results__right, .wishlistpage__right {
         width: 100%;
         margin: 0 auto; } }
-    .basket__right-box, .results__right-box {
+    .basket__right-box, .results__right-box, .wishlistpage__right-box {
       width: 80%;
       height: 100%;
       padding: 3.5rem;
       background-color: rgba(222, 222, 222, 0.8);
       border: 1px solid rgba(119, 119, 119, 0.4);
       box-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1); }
-      .basket__right-box--title, .results__right-box--title {
+      .basket__right-box--title, .results__right-box--title, .wishlistpage__right-box--title {
         margin: 0 auto;
         width: 130px;
         font-size: 1.8rem;
@@ -1013,7 +1027,7 @@ body {
         border-bottom: 1.5px solid #FF3333;
         padding-bottom: 3px;
         margin-bottom: 30px; }
-      .basket__right-box--pris, .basket__right-box--moms, .basket__right-box--frakt, .basket__right-box--totalt, .results__right-box--pris, .results__right-box--moms, .results__right-box--frakt, .results__right-box--totalt {
+      .basket__right-box--pris, .basket__right-box--moms, .basket__right-box--frakt, .basket__right-box--totalt, .results__right-box--pris, .results__right-box--moms, .results__right-box--frakt, .results__right-box--totalt, .wishlistpage__right-box--pris, .wishlistpage__right-box--moms, .wishlistpage__right-box--frakt, .wishlistpage__right-box--totalt {
         color: #003333;
         padding: .5rem 0;
         font-size: 2rem;
@@ -1021,19 +1035,19 @@ body {
         justify-content: space-between;
         align-items: center;
         width: 100%; }
-        .basket__right-box--pris---name, .basket__right-box--moms---name, .basket__right-box--frakt---name, .basket__right-box--totalt---name, .results__right-box--pris---name, .results__right-box--moms---name, .results__right-box--frakt---name, .results__right-box--totalt---name {
+        .basket__right-box--pris---name, .basket__right-box--moms---name, .basket__right-box--frakt---name, .basket__right-box--totalt---name, .results__right-box--pris---name, .results__right-box--moms---name, .results__right-box--frakt---name, .results__right-box--totalt---name, .wishlistpage__right-box--pris---name, .wishlistpage__right-box--moms---name, .wishlistpage__right-box--frakt---name, .wishlistpage__right-box--totalt---name {
           font-family: "Titillium Web", sans-serif; }
-      .basket__right-box--frakt, .results__right-box--frakt {
+      .basket__right-box--frakt, .results__right-box--frakt, .wishlistpage__right-box--frakt {
         border-bottom: 1px dotted rgba(0, 0, 0, 0.4); }
-        .basket__right-box--frakt---value, .results__right-box--frakt---value {
+        .basket__right-box--frakt---value, .results__right-box--frakt---value, .wishlistpage__right-box--frakt---value {
           color: #009966; }
-      .basket__right-box .checkout:link, .basket__right-box .checkout:visited, .results__right-box .checkout:link, .results__right-box .checkout:visited {
+      .basket__right-box .checkout:link, .basket__right-box .checkout:visited, .results__right-box .checkout:link, .results__right-box .checkout:visited, .wishlistpage__right-box .checkout:link, .wishlistpage__right-box .checkout:visited {
         border: 1px solid orange;
         background-color: #003333;
         color: #FF9933; }
-      .basket__right-box .checkout:hover, .basket__right-box .checkout:active, .results__right-box .checkout:hover, .results__right-box .checkout:active {
+      .basket__right-box .checkout:hover, .basket__right-box .checkout:active, .results__right-box .checkout:hover, .results__right-box .checkout:active, .wishlistpage__right-box .checkout:hover, .wishlistpage__right-box .checkout:active {
         background-color: #006666; }
-      .basket__right-box .continue:link, .basket__right-box .continue:visited, .basket__right-box .checkout:link, .basket__right-box .checkout:visited, .results__right-box .continue:link, .results__right-box .continue:visited, .results__right-box .checkout:link, .results__right-box .checkout:visited {
+      .basket__right-box .continue:link, .basket__right-box .continue:visited, .basket__right-box .checkout:link, .basket__right-box .checkout:visited, .results__right-box .continue:link, .results__right-box .continue:visited, .results__right-box .checkout:link, .results__right-box .checkout:visited, .wishlistpage__right-box .continue:link, .wishlistpage__right-box .continue:visited, .wishlistpage__right-box .checkout:link, .wishlistpage__right-box .checkout:visited {
         width: 80%;
         text-align: center;
         height: auto;
@@ -1046,11 +1060,11 @@ body {
         font: inherit;
         font-size: 2.2rem;
         transition: all .3s; }
-      .basket__right-box .continue:link, .basket__right-box .continue:visited, .results__right-box .continue:link, .results__right-box .continue:visited {
+      .basket__right-box .continue:link, .basket__right-box .continue:visited, .results__right-box .continue:link, .results__right-box .continue:visited, .wishlistpage__right-box .continue:link, .wishlistpage__right-box .continue:visited {
         border: 1px solid #003333;
         background-color: #FF9933;
         color: #003333; }
-      .basket__right-box .continue:hover, .basket__right-box .continue:active, .results__right-box .continue:hover, .results__right-box .continue:active {
+      .basket__right-box .continue:hover, .basket__right-box .continue:active, .results__right-box .continue:hover, .results__right-box .continue:active, .wishlistpage__right-box .continue:hover, .wishlistpage__right-box .continue:active {
         background-color: #e67300; }
 
 .singleprod {
@@ -1149,7 +1163,7 @@ body {
             flex-direction: column;
             width: 90%;
             margin: 0 auto; } }
-        .singleprod__main-right--buttons---checkout, .singleprod__main-right--buttons .wishlist {
+        .singleprod__main-right--buttons---checkout, .singleprod__main-right--buttons---wishlist {
           width: 35%;
           min-width: 210px;
           cursor: pointer;
@@ -1166,11 +1180,11 @@ body {
           color: #FF9933; }
           .singleprod__main-right--buttons---checkout:hover {
             background-color: #006666; }
-        .singleprod__main-right--buttons .wishlist {
+        .singleprod__main-right--buttons---wishlist {
           border: 1px solid #003333;
           background-color: #FF9933;
           color: #003333; }
-          .singleprod__main-right--buttons .wishlist:hover {
+          .singleprod__main-right--buttons---wishlist:hover {
             background-color: #e67300; }
       .singleprod__main-right--details {
         width: 90%; }
@@ -1592,22 +1606,22 @@ body {
     font-size: 2rem;
     font-weight: 600; }
 
-.results {
+.results, .wishlistpage {
   width: 100%;
   margin: 0 auto;
   padding: 5rem 15rem;
   display: block; }
-  .results__title {
+  .results__title, .wishlistpage__title {
     width: 140px; }
-  .results__state {
+  .results__state, .wishlistpage__state {
     color: #003333;
     font-size: 2.4rem;
     margin-bottom: 4rem; }
-    .results__state span {
+    .results__state span, .wishlistpage__state span {
       color: #009966; }
-  .results__area {
+  .results__area, .wishlistpage__area {
     width: 100%; }
-    .results__area .add_to_basket, .results__area .add_to_wishlist {
+    .results__area .add_to_basket, .results__area .add_to_wishlist, .wishlistpage__area .add_to_basket, .wishlistpage__area .add_to_wishlist {
       cursor: pointer;
       display: inline-block;
       padding: 1rem 1.5rem;
@@ -1615,19 +1629,22 @@ body {
       margin: 2rem 0;
       font-size: 1.6rem;
       transition: all .3s; }
-    .results__area .add_to_basket {
+    .results__area .add_to_basket, .wishlistpage__area .add_to_basket {
       margin-right: 1rem;
       background-color: #009966;
       border: 0.5px solid #FEFEFE;
       color: #FEFEFE; }
-      .results__area .add_to_basket:hover {
+      .results__area .add_to_basket:hover, .wishlistpage__area .add_to_basket:hover {
         background-color: #00cc88; }
-    .results__area .add_to_wishlist {
+    .results__area .add_to_wishlist, .wishlistpage__area .add_to_wishlist {
       background-color: #FF9933;
       color: #003333;
       border: 0.5px solid #003333; }
-      .results__area .add_to_wishlist:hover {
+      .results__area .add_to_wishlist:hover, .wishlistpage__area .add_to_wishlist:hover {
         background-color: #e67300; }
+
+.wishlistpage__title {
+  width: 130px; }
 
 .alert_bar {
   z-index: 50;

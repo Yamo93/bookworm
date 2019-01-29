@@ -136,7 +136,7 @@
                     margin: 0 auto;
                 }
 
-                &---checkout, .wishlist {
+                &---checkout, &---wishlist {
                     width: 35%;
                     min-width: 210px;
                     cursor: pointer;
@@ -159,7 +159,7 @@
                     }
                 }
 
-                .wishlist {
+                &---wishlist {
                     border: 1px solid $darkblue;
                     background-color: $orange;
                     color: $darkblue;

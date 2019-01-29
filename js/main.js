@@ -27,9 +27,12 @@ if (document.querySelector('.singleprod')) {
 
 document.querySelector('.basket_icon').addEventListener('click', openMiniBasket);
 
+document.querySelector('.wishlist_icon').addEventListener('click', openWishlist);
+
 document.querySelector('.hamburger').addEventListener('click', openDropdown);
 
 let miniBasketState = false;
+let wishlistState = false;
 let readMoreState = false;
 let modalBookState = 'front';
 let currentShownImage = null;
@@ -39,6 +42,7 @@ function openMiniBasket() {
     console.log('test');
     if (!miniBasketState) {
         document.querySelector('.minibasket').style.display = 'block';
+        document.querySelector('.wishlist').style.display = 'none';
         miniBasketState = true;
     } else {
         document.querySelector('.minibasket').style.display = 'none';
@@ -397,9 +401,14 @@ function prevSlide() {
 
 // The basket
 let storage = JSON.parse(localStorage.getItem('basket')) || [];
-console.log(storage);
+// console.log(storage);
+
+// The wishlist
+let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+console.log(wishlist);
 
 window.addEventListener('DOMContentLoaded', loadBasket);
+window.addEventListener('DOMContentLoaded', loadWishlist);
 
 let sum = 0;
 let moms = 10;
@@ -493,6 +502,96 @@ function loadBasket() {
 
 }
 
+function loadWishlist() {
+    // Loading in the latest version of LS if there is one
+    console.log('we loadin it');
+    wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+    // Starting off by keeping big basket empty
+
+    if (document.querySelector('.wishlistpage__area')) {
+        document.querySelector('.wishlistpage__state').innerHTML = `Du har för närvarande <span>${wishlist.length}</span> böcker tillagda i önskelistan.`;
+
+        document.querySelector('.wishlistpage__area').innerHTML = `<div class="wishlistpage__area-topbar">
+        <h3 class="wishlistpage__area-topbar--proddesc wishlistpage__area-proddesc">Produktbeskrivning</h3>
+        <h3 class="wishlistpage__area-topbar--quantity wishlistpage__area-quantity">Antal</h3>
+        <h3 class="wishlistpage__area-topbar--total wishlistpage__area-total">Totalt</h3>
+    </div>`;
+    }
+
+    // Emptying miniwishlist initially
+    document.querySelector('.wishlist__books').innerHTML = '';
+
+    if (wishlist) {
+        wishlist.forEach(item => {
+                let loadedMiniBook = `
+                <div class="wishlist__books-book">
+                <div class="wishlist__books-book--img" style="${item.imgURL}"></div>
+                <div class="wishlist__books-book--desc">
+                    <h2 class="wishlist__books-book--desc---title">${item.title}</h2>
+                    <p class="wishlist__books-book--desc---author">Av ${item.author}</p>
+                    <p class="wishlist__books-book--desc---price">${item.price} SEK</p>
+                    <button class="wishlist__books-book--desc---basket_btn" data-id="book${item.id}">Lägg till i varukorg</button>
+                </div>
+            </div>
+                `;
+
+                let loadedBigBook = `
+                <div class="product">
+                    <div class="wishlistpage__area-info">
+                        <div class="wishlistpage__area-info--desc">
+                            <h3 class="wishlistpage__area-info--desc---title">${item.title}</h3>
+                            <p class="wishlistpage__area-info--desc---author">${item.author}</p>
+                        </div>
+                        <div class="wishlistpage__area-info--quant">
+                            <input type="number" class="prod_quantity" value="1">
+                        </div>
+                        <h1 class="wishlistpage__area-info--price">${item.price} SEK</h1>
+                    </div>
+                    <div class="wishlistpage__area-book">
+                        <div class="wishlistpage__area-book--img" style="${item.imgURL}"></div>
+                        <div class="wishlistpage__area-book--details">
+                            <p class="wishlistpage__area-book--details---skick"><span>Skick:</span> Väldigt bra</p>
+                            <p class="wishlistpage__area-book--details---format"><span>Format:</span> Hardback</p>
+                            <p class="wishlistpage__area-book--details---sidor"><span>Antal sidor:</span> ${item.pages}</p>
+                            <p class="wishlistpage__area-book--details---vikt"><span>Vikt:</span> ${item.weight} gram</p>
+                            <p class="wishlistpage__area-book--details---datum"><span>Publiceringsdatum:</span> 2018-10-16</p>
+                            <p class="wishlistpage__area-book--details---desc"><span>Kort beskrivning:</span> En fantastisk, underhållande bok som har sålts i stora antal världen runt om... <a href="./book${item.id}.html"><span class="readmore">Läs mer</span></a></p>
+                            <p class="add_to_basket" data-id="book${item.id}">Lägg till i varukorgen</p>
+                        </div>
+                    </div>
+                </div>
+                `;
+    
+                document.querySelector('.wishlist__books').insertAdjacentHTML('beforeend', loadedMiniBook);
+    
+                if (document.querySelector('.wishlistpage__area')) {
+                    document.querySelector('.wishlistpage__area').insertAdjacentHTML('beforeend', loadedBigBook);
+                }
+        });
+
+        document.querySelector('.wishlist_icon').dataset.wished = wishlist.length;
+
+    }
+
+    // document.querySelector('.minibasket__total-top--quantity').innerHTML = `<span>${storage.length}</span> varor`;
+
+    // document.querySelector('.minibasket__total-top--total').innerHTML = `Totalt: <span>${sum} SEK</span>`;
+
+    // if (document.querySelector('.basket__right-box--pris---value')) {
+    //     document.querySelector('.basket__right-box--pris---value').textContent = `${sum} SEK`;
+    //     document.querySelector('.basket__right-box--moms---value').textContent = `${moms} SEK`;
+    //     document.querySelector('.basket__right-box--totalt---value').textContent = `${sum + moms} SEK`;
+    // }
+
+    // if (document.querySelector('.checkout__right-box--pris')) {
+    //     document.querySelector('.checkout__right-box--pris---value').textContent = `${sum} SEK`;
+    //     document.querySelector('.checkout__right-box--moms---value').textContent = `${moms} SEK`;
+    //     document.querySelector('.checkout__right-box--totalt---value').textContent = `${sum + moms} SEK`;
+    // }
+
+}
+
 function updateSum() {
     sum = 0;
     storage.forEach(item => {
@@ -574,6 +673,17 @@ if (document.querySelector('.products__collection')) {
     document.querySelector('.products__collection').addEventListener('click', addItemToBasket);
 } else if (document.querySelector('.singleprod')) {
     document.querySelector('.singleprod').addEventListener('click', addItemToBasket);
+    document.querySelector('.singleprod').addEventListener('click', addItemToWishlist);
+}
+
+if (document.querySelector('.hero__menu-top--basket')) {
+    console.log('yeah we have it');
+    document.querySelector('.hero__menu-top--basket').addEventListener('click', addItemToBasket);
+}
+
+if (document.querySelector('.wishlistpage__area')) {
+    document.querySelector('.wishlistpage__area').addEventListener('click', addItemToBasket);
+
 }
 
 // if (document.querySelector('.add_to_basket')) {
@@ -604,6 +714,11 @@ function addItemToBasket(e) {
     }
     
     if (e.target.matches('.add_to_basket')) {
+        pushBook(e.target.dataset.id);
+        showAlert();
+    }
+
+    if (e.target.matches('.wishlist__books-book--desc---basket_btn')) {
         pushBook(e.target.dataset.id);
         showAlert();
     }
@@ -830,3 +945,57 @@ function loadSearchResults() {
 function directUserBack() {
     window.history.back();
 }
+
+function openWishlist() {
+    if (!wishlistState) {
+        document.querySelector('.wishlist').style.display = 'block';
+        document.querySelector('.minibasket').style.display = 'none';
+        wishlistState = true;
+    } else {
+        document.querySelector('.wishlist').style.display = 'none';
+        wishlistState = false;
+    }
+}
+
+function addItemToWishlist(e) {
+    if (e.target.matches('.singleprod__main-right--buttons---wishlist')) {
+        pushBook(e.target.dataset.id);
+        // showAlert();
+    } else if (e.target.matches('.add_to_wishlist')) {
+        pushBook(e.target.dataset.id);
+    }
+
+    function pushBook(bookID) {
+        if (e.target.dataset.id === bookID) {
+            // console.log(`Dataset ID is: ${e.target.dataset.id} and book ID is ${bookID}`);
+
+            // Save in LS
+            wishlist.push(books[bookID]);
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            let newBook = `
+            <div class="wishlist__books-book">
+            <div class="wishlist__books-book--img" style="${books[bookID].imgURL}"></div>
+            <div class="wishlist__books-book--desc">
+                <h2 class="wishlist__books-book--desc---title">${books[bookID].title}</h2>
+                <p class="wishlist__books-book--desc---author">Av ${books[bookID].author}</p>
+                <p class="wishlist__books-book--desc---price">${books[bookID].price} SEK</p>
+                <button class="wishlist__books-book--desc---basket_btn" data-id="book${books[bookID]}">Lägg till i varukorg</button>
+            </div>
+        </div>
+            `;
+
+            document.querySelector('.wishlist__books').insertAdjacentHTML('afterbegin', newBook);
+
+            document.querySelector('.alert_bar').classList.add('display_alert');
+            document.querySelector('.alert_bar').classList.remove('danger_alert');
+            document.querySelector('.alert_bar').classList.add('success_alert');
+            document.querySelector('.alert_bar').innerHTML = `Boken <span>"${books[bookID].title}"</span> har lagts till din önskelista! ❤`;
+            
+            setTimeout(function() {
+                document.querySelector('.alert_bar').classList.remove('display_alert');
+            }, 5000);
+        }
+    }
+
+    document.querySelector('.wishlist_icon').dataset.wished = wishlist.length;
+};
