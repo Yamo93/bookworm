@@ -24,8 +24,8 @@
                         <div class="dropdown">
                             <ul class="dropdown__menu">
                                 <p class="dropdown__menu-close">&times;</p>
-                                <a href="#"><li class="dropdown__menu-item">Hem</li></a>
-                                <a href="./products.html"><li class="dropdown__menu-item">Våra produkter</li></a>
+                                <a href="./index.html"><li class="dropdown__menu-item">Hem</li></a>
+                                <a href="#"><li class="dropdown__menu-item">Våra produkter</li></a>
                                 <a href="./aboutus.html"><li class="dropdown__menu-item">Om oss</li></a>
                                 <a href="./checkout.html"><li class="dropdown__menu-item">Kassan</li></a>
                                 <a href="./basket.html"><li class="dropdown__menu-item">Varukorgen</li></a>
@@ -93,6 +93,10 @@
                                     </div>
                             </div>
                             <div class="wishlist">
+                                    <div class="wishlist__top">
+                                            <a href="./wishlist.html"><p class="wishlist__top-name">Din önskelista ❤</p></a>
+                                            <p class="wishlist__top-emptylist">Töm önskelistan</p>
+                                        </div>
                                 <div class="wishlist__books">
                                     <div class="wishlist__books-book">
                                         <div class="wishlist__books-book--img"></div>
@@ -123,18 +127,22 @@
         </header>
         <!-- Book section -->
     </section>
+    <div class="backdrop"></div>
     <section class="newbooks products">
-        <div class="modal">
-            <p class="closemodal">&times;</p>
-            <p class="modal__left">&larr;</p>
-            <p class="modal__right">&rarr;</p>
-        </div>
+            <div class="modal">
+                    <p class="closemodal">&times;</p>
+                    <div class="modal__pic"></div>
+                    <p class="modal__left">&larr;</p>
+                    <p class="modal__right">&rarr;</p>
+                </div>
         <div class="backdrop"></div>
         <h1 class="newbooks__title default-title">Våra senaste böcker</h1>
         <div class="newbooks__collection products__collection">
             <div class="larr slide_larr">&larr;</div>
             <div class="product prodplace1">
-                <div class="product__pic pic1"></div>
+                <div class="product__pic pic1">
+                    <div class="add_to_wishlist" data-id="book1">🧡</div>
+                </div>
                 <h2 class="product__title">Introduction to The Design and Analysis of Algorithms</h2>
                 <p class="product__author">av Anany Levitin</p>
                 <p class="product__price">149 SEK</p>
@@ -142,7 +150,7 @@
                 <button class="product__basketbtn" id="book1">Lägg till i kassan</button>
             </div>
             <div class="product prodplace2">
-                    <div class="product__pic pic2"></div>
+                    <div class="product__pic pic2"><div class="add_to_wishlist" data-id="book2">🧡</div></div>
                     <h2 class="product__title">Introducing Data Structures with Java</h2>
                     <p class="product__author">av David Cousins</p>
                     <p class="product__price">159 SEK</p>
@@ -150,7 +158,7 @@
                     <button class="product__basketbtn" id="book2">Lägg till i kassan</button>
             </div>
             <div class="product prodplace3">
-                    <div class="product__pic pic3"></div>
+                    <div class="product__pic pic3"><div class="add_to_wishlist" data-id="book3">🧡</div></div>
                     <h2 class="product__title">An Introduction to Object-Oriented Programming...</h2>
                     <p class="product__author">av C. Thomas Wu</p>
                     <p class="product__price">169 SEK</p>
@@ -158,7 +166,7 @@
                     <button class="product__basketbtn" id="book3">Lägg till i kassan</button>
             </div>
             <div class="product prodplace4">
-                    <div class="product__pic pic4"></div>
+                    <div class="product__pic pic4"><div class="add_to_wishlist" data-id="book4">🧡</div></div>
                     <h2 class="product__title">The C Programming Language - Second Edition</h2>
                     <p class="product__author">av B. W. Kernighan och D. Ritchie</p>
                     <p class="product__price">179 SEK</p>
@@ -203,6 +211,9 @@
             Copyright &copy; 2019 by Yamo Gebrewold
         </p>
     </footer>
+    <div class="fixedarrow" onclick="scrollUp()">
+            &#8593;
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html>

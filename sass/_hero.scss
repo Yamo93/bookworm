@@ -83,7 +83,7 @@
                 position: absolute;
                 top: 0;
                 z-index: 20;
-                width: 100vw;
+                width: 100%;
                 height: 60vh;
                 padding: 3rem;
                 background-color: $white;
@@ -506,6 +506,32 @@
                     @media screen and (max-width: 450px) {
                         left: 50%;
                         transform: translateX(-50%);
+                    }
+
+                    &__top {
+                        padding: 8px;
+                        &-name, &-emptylist {
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                        }
+
+                        &-name {
+                            color: $lightblue;
+                            transition: all .3s;
+
+                            &:hover {
+                                color: darken($lightblue, 10%);
+                            }
+                        }
+
+                        &-emptylist {
+                            cursor: pointer;
+                            color: $red;
+                            transition: all .3s;
+                            &:hover {
+                                color: darken($red, 15%);
+                            }
+                        }
                     }
 
                     &__books {

@@ -23,6 +23,15 @@
         // color: $orange;
         // color: $darkblue;
     }
+
+    @media screen and (max-width: 730px) {
+        font-size: 1.6rem;
+        display: block;
+        padding: 1.5rem;
+    }
+    @media screen and (max-width: 500px) {
+        font-size: 1.4rem;
+    }
 }
 
 .display_alert {

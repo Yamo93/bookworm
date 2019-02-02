@@ -52,6 +52,7 @@
         margin: 3rem 0;
         height: 100%;
         display: flex;
+        justify-content: space-between;
 
         @media screen and (max-width: 820px) {
             flex-direction: column;
@@ -106,7 +107,7 @@
         }
 
         &-right {
-            width: 70%;
+            width: 65%;
 
             @media screen and (max-width: 820px) {
                 width: 90%;
