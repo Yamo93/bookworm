@@ -113,7 +113,7 @@ body {
         justify-content: space-between;
         display: none;
         margin-bottom: 1rem; }
-        @media screen and (max-width: 450px) {
+        @media screen and (max-width: 580px) {
           .hero__menu-top .hamburger {
             display: flex; } }
         .hero__menu-top .hamburger .bar {
@@ -121,7 +121,7 @@ body {
           width: 100%;
           background-color: #003333; }
       .hero__menu-top .dropdown {
-        position: absolute;
+        position: fixed;
         top: 0;
         z-index: 20;
         width: 100%;
@@ -153,6 +153,10 @@ body {
           .hero__menu-top--logo img {
             width: 150px;
             height: 80px; } }
+        @media screen and (max-width: 580px) {
+          .hero__menu-top--logo img {
+            width: 120px;
+            height: 50px; } }
       .hero__menu-top .search {
         width: 35%;
         box-shadow: 0.5px 1px 1px rgba(0, 0, 0, 0.2);
@@ -160,7 +164,7 @@ body {
         position: relative; }
         @media screen and (max-width: 580px) {
           .hero__menu-top .search {
-            display: none; } }
+            width: 65%; } }
         .hero__menu-top .search__field {
           display: flex; }
         .hero__menu-top .search__suggest {
@@ -302,7 +306,8 @@ body {
           @media screen and (max-width: 450px) {
             .hero__menu-top--basket .minibasket, .hero__menu-top--basket .wishlist {
               left: 50%;
-              transform: translateX(-50%); } }
+              transform: translateX(-50%);
+              width: 280px; } }
           .hero__menu-top--basket .minibasket__top, .hero__menu-top--basket .wishlist__top {
             display: flex;
             justify-content: space-between;
@@ -493,7 +498,7 @@ body {
       display: flex;
       justify-content: center;
       align-items: flex-start; }
-      @media screen and (max-width: 450px) {
+      @media screen and (max-width: 580px) {
         .hero__menu-bottom {
           display: none; } }
       .hero__menu-bottom ul {
@@ -1415,7 +1420,7 @@ body {
         min-width: 350px; } }
     @media screen and (max-width: 450px) {
       .checkout__left {
-        min-width: 300px; } }
+        min-width: 240px; } }
     .checkout__left-topbar {
       width: 100%;
       min-width: 540px;
@@ -1428,6 +1433,9 @@ body {
       @media screen and (max-width: 800px) {
         .checkout__left-topbar {
           min-width: 300px; } }
+      @media screen and (max-width: 500px) {
+        .checkout__left-topbar {
+          min-width: 250px; } }
       @media screen and (max-width: 600px) {
         .checkout__left-topbar {
           flex-direction: column; } }
@@ -1447,6 +1455,9 @@ body {
             width: 40%;
             margin: 1rem auto;
             border-bottom: 1px dotted #003333; } }
+        @media screen and (max-width: 500px) {
+          .checkout__left-topbar--betalning, .checkout__left-topbar--leverans, .checkout__left-topbar--bekraftelse {
+            width: 65%; } }
       .checkout__left-topbar .current {
         color: #009966;
         border-bottom: 2px solid #009966; }
@@ -1696,8 +1707,48 @@ body {
       .results__area .add_to_wishlist:hover, .wishlistpage__area .add_to_wishlist:hover {
         background-color: #e67300; }
 
+@media screen and (max-width: 700px) {
+  .wishlistpage {
+    padding: 3rem 4rem; } }
+
 .wishlistpage__title {
   width: 130px; }
+
+@media screen and (max-width: 500px) {
+  .wishlistpage__area {
+    flex-direction: column;
+    align-items: center; } }
+
+.wishlistpage__area-info--price {
+  width: 40%; }
+
+.wishlistpage__area-info--desc {
+  width: 55%; }
+  @media screen and (max-width: 700px) {
+    .wishlistpage__area-info--desc {
+      width: 90%; } }
+  @media screen and (max-width: 700px) {
+    .wishlistpage__area-info--desc---title {
+      margin-bottom: 2rem; } }
+  @media screen and (max-width: 700px) {
+    .wishlistpage__area-info--desc---author {
+      margin-bottom: 3rem; } }
+
+@media screen and (max-width: 500px) {
+  .wishlistpage__area-info--quant {
+    margin-bottom: 2rem; } }
+
+.wishlistpage__area-book--details {
+  width: 70%; }
+  @media screen and (max-width: 500px) {
+    .wishlistpage__area-book--details {
+      width: 100%; } }
+
+.wishlistpage__area-book--img {
+  min-width: 170px; }
+  @media screen and (max-width: 600px) {
+    .wishlistpage__area-book--img {
+      width: 70%; } }
 
 .alert_bar {
   z-index: 50;

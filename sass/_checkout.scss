@@ -50,7 +50,7 @@
         }
 
         @media screen and (max-width: 450px) {
-            min-width: 300px;
+            min-width: 240px;
         }
         
         &-topbar {
@@ -67,6 +67,10 @@
 
             @media screen and (max-width: 800px) {
                 min-width: 300px;
+            }
+
+            @media screen and (max-width: 500px) {
+                min-width: 250px;
             }
 
             @media screen and (max-width: 600px) {
@@ -90,6 +94,10 @@
                     width: 40%;
                     margin: 1rem auto;
                     border-bottom: 1px dotted $darkblue;
+                }
+
+                @media screen and (max-width: 500px) {
+                    width: 65%;
                 }
             }
             

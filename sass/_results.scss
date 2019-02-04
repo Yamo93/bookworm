@@ -55,7 +55,69 @@
 }
 
 .wishlistpage {
+    @media screen and (max-width: 700px) {
+        padding: 3rem 4rem;
+    }
     &__title {
         width: 130px;
+    }
+
+    &__area {
+
+        @media screen and (max-width: 500px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &-info {
+
+            &--price {
+                width: 40%;
+            }
+
+            &--desc {
+                width: 55%;
+
+                @media screen and (max-width: 700px) {
+                    width: 90%;
+                }
+
+                &---title {
+                    @media screen and (max-width: 700px) {
+                        margin-bottom: 2rem;
+                    }
+                }
+
+                &---author {
+                    @media screen and (max-width: 700px) {
+                        margin-bottom: 3rem;
+                    }
+                }
+            }
+
+            &--quant {
+                @media screen and (max-width: 500px) {
+                    margin-bottom: 2rem;
+                }
+            }
+
+
+        }
+
+        &-book {
+            &--details {
+                width: 70%;
+
+                @media screen and (max-width: 500px) {
+                    width: 100%;
+                }
+            }
+            &--img {
+                min-width: 170px;
+                @media screen and (max-width: 600px) {
+                    width: 70%;
+                }
+            }
+        }
     }
 }

@@ -304,7 +304,6 @@ let countBooksLeft = booksArray.length;
 // Funktion för att flytta runt på produktsektionen
 function switchSlideBook(e) {
     if (e.target.classList.contains('rarr')) {
-        if (currentSlideBook >= 1) {
             if (currentSlideBook < booksArray.length) {
                 countBooksRight = currentSlideBook + 1;
             } else if (currentSlideBook === booksArray.length) {
@@ -317,9 +316,7 @@ function switchSlideBook(e) {
             }
 
             currentSlideBook < booksArray.length ? currentSlideBook++ : currentSlideBook = 1;
-        }
     } else if (e.target.classList.contains('larr')) {
-
         if (currentSlideBook === 1) {
             countBooksLeft = booksArray.length;
         } else if (currentSlideBook > 1) {
