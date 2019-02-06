@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,135 +11,130 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700%7CTitillium+Web:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <!-- Övre framdelen -->
     <section class="hero">
         <header>
-        <div class="hero__infoarea">
-            <h1 class="hero__infoarea--title">Mellandagsrea - <span>50%</span> på alla böcker!</h1>
-        </div>
-        <div class="hero__menu">
-            <div class="hero__menu-top">
+            <div class="hero__infoarea">
+                <h1 class="hero__infoarea--title">Mellandagsrea - <span>50%</span> på alla böcker!</h1>
+            </div>
+            <div class="hero__menu">
+                <div class="hero__menu-top">
+                    <!-- Hamburgerikon med CSS -->
                     <div class="hamburger">
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="dropdown">
-                            <ul class="dropdown__menu">
-                                <p class="dropdown__menu-close">&times;</p>
-                                <a href="./index.html"><li class="dropdown__menu-item">Hem</li></a>
-                                <a href="#"><li class="dropdown__menu-item">Våra produkter</li></a>
-                                <a href="./aboutus.html"><li class="dropdown__menu-item">Om oss</li></a>
-                                <a href="./checkout.html"><li class="dropdown__menu-item">Kassan</li></a>
-                                <a href="./basket.html"><li class="dropdown__menu-item">Varukorgen</li></a>
-                            </ul>
-                        </div>
-                <div class="hero__menu-top--logo">
-                    <a href="./index.html"><img src="./img/logo/logo.svg" alt="Bookworms logga"></a>
-                </div>
-                <div class="search">
-                    <div class="search__field">
-                        <input type="search" class="hero__menu-top--search" placeholder="Sök efter boktitel...">
-                        <button class="searchbtn">
-                            <div class="glass"></div>
-                            <div class="handle"></div>
-                        </button>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
                     </div>
-                    <div class="search__suggest">
-                        <!-- <div class="search__suggest-choice">
-                            <div class="search__suggest-choice--icon">
-                                <div class="search__suggest-choice--icon---glass"></div>
-                                <div class="search__suggest-choice--icon---handle"></div>
+                    <!-- Dropdown-menyn -->
+                    <div class="dropdown">
+                        <ul class="dropdown__menu">
+                            <li class="dropdown__menu-close">&times;</li>
+                            <li class="dropdown__menu-item"><a href="./index.html">Hem</a></li>
+                            <li class="dropdown__menu-item"><a href="#">Våra produkter</a></li>
+                            <li class="dropdown__menu-item"><a href="./aboutus.html">Om oss</a></li>
+                            <li class="dropdown__menu-item"><a href="./checkout.html">Kassan</a></li>
+                            <li class="dropdown__menu-item"><a href="./basket.html">Varukorgen</a></li>
+                        </ul>
+                    </div>
+                    <div class="hero__menu-top--logo">
+                        <a href="./index.html"><img src="./img/logo/logo.svg" alt="Bookworms logga"></a>
+                    </div>
+                    <!-- Sökfältet -->
+                    <div class="search">
+                        <div class="search__field">
+                            <input type="search" class="hero__menu-top--search" placeholder="Sök efter boktitel...">
+                            <div class="searchbtn">
+                                <div class="glass"></div>
+                                <div class="handle"></div>
                             </div>
-                            <p class="search__suggest-choice--text"><span>java</span>script</p>
-                        </div> -->
+                        </div>
+                        <div class="search__suggest">
+
+                        </div>
                     </div>
-            </div>
-                <div class="hero__menu-top--basket">
-                    <div class="basket_icon" data-items="1">
-                        <img src="./img/page_icons/basket_icon_final.svg" alt="Minivarukorg" class="minibasket_icon">
-                    </div>
-                    <div class="wishlist_icon" data-wished="1">
-                        <img src="./img/page_icons/heart_icon_final.svg" alt="Önskelista" class="heart_icon">
-                    </div>
+                    <!-- Ikoner för varukorgen och önskelistan -->
+                    <div class="hero__menu-top--basket">
+                        <div class="basket_icon" data-items="1">
+                            <img src="./img/page_icons/basket_icon_final.svg" alt="Minivarukorg" class="minibasket_icon">
+                        </div>
+                        <div class="wishlist_icon" data-wished="1">
+                            <img src="./img/page_icons/heart_icon_final.svg" alt="Önskelista" class="heart_icon">
+                        </div>
+                        <!-- Minivarukorgen -->
                         <div class="minibasket">
-                                <div class="minibasket__top">
-                                    <p class="minibasket__top-title">Min varukorg</p>
-                                    <a href="./basket.html" class="minibasket__top-link">Visa varukorg</a>
-                                </div>
-                                <!-- <div class="minibasket__alert">
-                                    <h2 class="minibasket__alert-msg">Boken "Blabla" har lagts till i din varukorg!</h2>
-                                    <div class="minibasket__alert-close">&times;</div>
-                                </div> -->
-                                <div class="minibasket__books">
-                                    <!-- <div class="book">
-                                        <div class="book__img"></div>
-                                        <div class="book__details">
-                                            <h3 class="book__details-title">Blabla bla</h3>
-                                            <label  class="book__details-label">Antal:</label>
-                                            <input type="number" class="book__details-input">
-                                            <p class="book__details-price">199 SEK</p>
-                                        </div>
-    
-                                        <p class="book__remove">&times; TA BORT</p>
-                                    </div> -->
-                                </div>
-                                    <div class="minibasket__total">
-                                        <div class="minibasket__total-top">
-                                            <p class="minibasket__total-top--quantity"><span>Inga</span> varor</p>
-                                            <p class="minibasket__total-top--total">Totalt: <span>0 SEK</span></p>
-                                        </div>
-                                        <div class="bottom">
-                                            <a href="./basket.html" class="varukorg">Visa varukorg</a>
-                                            <a href="./checkout.html" class="kassa">Till kassan</a>
-                                        </div>
-                                    </div>
+                            <div class="minibasket__top">
+                                <p class="minibasket__top-title">Min varukorg</p>
+                                <a href="./basket.html" class="minibasket__top-link">Visa varukorg</a>
                             </div>
-                            <div class="wishlist">
-                                    <div class="wishlist__top">
-                                            <a href="./wishlist.html"><p class="wishlist__top-name">Din önskelista ❤</p></a>
-                                            <p class="wishlist__top-emptylist">Töm önskelistan</p>
-                                        </div>
-                                <div class="wishlist__books">
-                                    <div class="wishlist__books-book">
-                                        <div class="wishlist__books-book--img"></div>
-                                        <div class="wishlist__books-book--desc">
-                                            <h2 class="wishlist__books-book--desc---title">Concepts of Programming</h2>
-                                            <p class="wishlist__books-book--desc---author">Av Lol Lolsson</p>
-                                            <p class="wishlist__books-book--desc---price">199 SEK</p>
-                                            <button class="wishlist__books-book--desc---basket_btn">Lägg till i varukorg</button>
-                                        </div>
-                                    </div>
-                                    
+
+                            <div class="minibasket__books">
+
+                            </div>
+                            <div class="minibasket__total">
+                                <div class="minibasket__total-top">
+                                    <p class="minibasket__total-top--quantity"><span>Inga</span> varor</p>
+                                    <p class="minibasket__total-top--total">Totalt: <span>0 SEK</span></p>
                                 </div>
-                                <div class="wishlist__bottom">
-                                    <a href="./wishlist.html" class="wishlist__bottom-link">Gå till önskelista</a>
+                                <div class="bottom">
+                                    <a href="./basket.html" class="varukorg">Visa varukorg</a>
+                                    <a href="./checkout.html" class="kassa">Till kassan</a>
                                 </div>
                             </div>
+                        </div>
+                        <!-- Önskelistan -->
+                        <div class="wishlist">
+                            <div class="wishlist__top">
+                                <a href="./wishlist.html">
+                                    <p class="wishlist__top-name">Din önskelista ❤</p>
+                                </a>
+                                <p class="wishlist__top-emptylist">Töm önskelistan</p>
+                            </div>
+                            <div class="wishlist__books">
+                                <div class="wishlist__books-book">
+                                    <div class="wishlist__books-book--img"></div>
+                                    <div class="wishlist__books-book--desc">
+                                        <h2 class="wishlist__books-book--desc---title">Concepts of Programming</h2>
+                                        <p class="wishlist__books-book--desc---author">Av Lol Lolsson</p>
+                                        <p class="wishlist__books-book--desc---price">199 SEK</p>
+                                        <button class="wishlist__books-book--desc---basket_btn">Lägg till i varukorg</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="wishlist__bottom">
+                                <a href="./wishlist.html" class="wishlist__bottom-link">Gå till önskelista</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Menyn -->
+                <div class="hero__menu-bottom">
+                    <ul>
+                        <li><a href="./index.html">Hem</a></li>
+                        <li><a href="#">Våra produkter</a></li>
+                        <li><a href="./aboutus.html">Om oss</a></li>
+                        <li><a href="./checkout.html">Kassan</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="hero__menu-bottom">
-                <ul>
-                    <li><a href="./index.html">Hem</a></li>
-                    <li><a href="#">Våra produkter</a></li>
-                    <li><a href="./aboutus.html">Om oss</a></li>
-                    <li><a href="./checkout.html">Kassan</a></li>
-                </ul>
-            </div>
-        </div>
         </header>
         <!-- Book section -->
     </section>
     <div class="backdrop"></div>
     <section class="newbooks products">
-            <div class="modal">
-                    <p class="closemodal">&times;</p>
-                    <div class="modal__pic"></div>
-                    <p class="modal__left">&larr;</p>
-                    <p class="modal__right">&rarr;</p>
-                </div>
+        <!-- Modal för bild -->
+        <div class="modal">
+            <p class="closemodal">&times;</p>
+            <div class="modal__pic"></div>
+            <p class="modal__left">&larr;</p>
+            <p class="modal__right">&rarr;</p>
+        </div>
+        <!-- Skuggan som syns när dropdown fälls ner eller modal är aktiv -->
         <div class="backdrop"></div>
         <h1 class="newbooks__title default-title">Våra senaste böcker</h1>
+        <!-- Sektion för produkterna -->
         <div class="newbooks__collection products__collection">
             <div class="larr slide_larr">&larr;</div>
             <div class="product prodplace1">
@@ -152,49 +148,42 @@
                 <button class="product__basketbtn" id="book1">Lägg till i kassan</button>
             </div>
             <div class="product prodplace2">
-                    <div class="product__pic pic2"><div class="add_to_wishlist" data-id="book2">🧡</div></div>
-                    <h2 class="product__title">Introducing Data Structures with Java</h2>
-                    <p class="product__author">av David Cousins</p>
-                    <p class="product__price">159 SEK</p>
-                    <a href="./book2.html" class="product__linkbtn">Läs mer om boken</a>
-                    <button class="product__basketbtn" id="book2">Lägg till i kassan</button>
+                <div class="product__pic pic2">
+                    <div class="add_to_wishlist" data-id="book2">🧡</div>
+                </div>
+                <h2 class="product__title">Introducing Data Structures with Java</h2>
+                <p class="product__author">av David Cousins</p>
+                <p class="product__price">159 SEK</p>
+                <a href="./book2.html" class="product__linkbtn">Läs mer om boken</a>
+                <button class="product__basketbtn" id="book2">Lägg till i kassan</button>
             </div>
             <div class="product prodplace3">
-                    <div class="product__pic pic3"><div class="add_to_wishlist" data-id="book3">🧡</div></div>
-                    <h2 class="product__title">An Introduction to Object-Oriented Programming...</h2>
-                    <p class="product__author">av C. Thomas Wu</p>
-                    <p class="product__price">169 SEK</p>
-                    <a href="./book3.html" class="product__linkbtn">Läs mer om boken</a>
-                    <button class="product__basketbtn" id="book3">Lägg till i kassan</button>
+                <div class="product__pic pic3">
+                    <div class="add_to_wishlist" data-id="book3">🧡</div>
+                </div>
+                <h2 class="product__title">An Introduction to Object-Oriented Programming...</h2>
+                <p class="product__author">av C. Thomas Wu</p>
+                <p class="product__price">169 SEK</p>
+                <a href="./book3.html" class="product__linkbtn">Läs mer om boken</a>
+                <button class="product__basketbtn" id="book3">Lägg till i kassan</button>
             </div>
             <div class="product prodplace4">
-                    <div class="product__pic pic4"><div class="add_to_wishlist" data-id="book4">🧡</div></div>
-                    <h2 class="product__title">The C Programming Language - Second Edition</h2>
-                    <p class="product__author">av B. W. Kernighan och D. Ritchie</p>
-                    <p class="product__price">179 SEK</p>
-                    <a href="./book4.html" class="product__linkbtn">Läs mer om boken</a>
-                    <button class="product__basketbtn" id="book4">Lägg till i kassan</button>
+                <div class="product__pic pic4">
+                    <div class="add_to_wishlist" data-id="book4">🧡</div>
+                </div>
+                <h2 class="product__title">The C Programming Language - Second Edition</h2>
+                <p class="product__author">av B. W. Kernighan och D. Ritchie</p>
+                <p class="product__price">179 SEK</p>
+                <a href="./book4.html" class="product__linkbtn">Läs mer om boken</a>
+                <button class="product__basketbtn" id="book4">Lägg till i kassan</button>
             </div>
-            <!-- <div class="product">
-                    <div class="product__pic pic5"></div>
-                    <h2 class="product__title">Concepts of Programming Languages</h2>
-                    <p class="product__author">av Robert W. Sebesta</p>
-                    <p class="product__price">179 SEK</p>
-                    <a href="./book5.html" class="product__linkbtn">Läs mer om boken</a>
-                    <button class="product__basketbtn">Lägg till i kassan</button>
-            </div>
-            <div class="product">
-                    <div class="product__pic pic6"></div>
-                    <h2 class="product__title">Python Programming - An Introduction to Computer Science</h2>
-                    <p class="product__author">av John Zelle</p>
-                    <p class="product__price">179 SEK</p>
-                    <a href="./book6.html" class="product__linkbtn">Läs mer om boken</a>
-                    <button class="product__basketbtn">Lägg till i kassan</button>
-            </div> -->
+
             <div class="rarr slide_rarr">&rarr;</div>
         </div>
     </section>
+    <!-- Meddelandefält -->
     <div class="alert_bar">Boken <span>"BlaBlaBla"</span> har lagts till din varukorg!</div>
+    <!-- Sidfot -->
     <footer class="footer">
         <ul class="footer__links">
             <li class="footer__links-link">Vår blogg</li>
@@ -203,19 +192,22 @@
             <li class="footer__links-link">FAQ</li>
         </ul>
 
+        <!-- Ikoner för sociala medier -->
         <div class="footer__social">
-                <img src="./img/social_icons/twitter_icon_final.svg" class="icon">
-                <img src="./img/social_icons/facebook_icon_final.svg" class="icon">
-                <img src="./img/social_icons/instagram_icon_final.svg" class="icon">
-            </div>
+            <img src="./img/social_icons/twitter_icon_final.svg" class="icon" alt="Twitterikon">
+            <img src="./img/social_icons/facebook_icon_final.svg" class="icon" alt="Facebookikon">
+            <img src="./img/social_icons/instagram_icon_final.svg" class="icon" alt="Twitterikon">
+        </div>
 
         <p class="footer__copy">
             Copyright &copy; 2019 by Yamo Gebrewold
         </p>
     </footer>
+    <!-- Pilen i kanten nere till vänster -->
     <div class="fixedarrow" onclick="scrollUp()">
-            &#8593;
+        &#8593;
     </div>
     <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -1,9 +1,11 @@
+/*! Övre framdelen */
 .hero {
     width: 100%;
     max-height: 100vh;
     min-height: 100%;
 
     &__infoarea {
+        /*! Reklamen högst upp */
         width: 100%;
         min-height: 60px;
         height: 5vh;
@@ -18,6 +20,7 @@
         }
 
         &--title {
+            /*! Rubriken */
             font-size: 2.5rem;
             font-weight: 300;
             text-transform: uppercase;
@@ -29,6 +32,7 @@
     }
 
     &__menu {
+        /*! Menydelen */
         width: 100%;
         min-height: 200px;
         height: 30vh;
@@ -79,6 +83,7 @@
             }
 
             .dropdown {
+                /*! Dropdown-menyn */
                 // display: none;
                 position: fixed;
                 top: 0;
@@ -113,6 +118,7 @@
             }
 
             &--logo {
+                /*! Loggan */
                 img {
                     width: 200px;
                     height: 100px;
@@ -132,8 +138,8 @@
                 }
             }
 
-            
             .search {
+                /*! Sökfältet */
                 width: 35%;
                 box-shadow: .5px 1px 1px rgba(0, 0, 0, .2);
                 font-family: inherit;
@@ -148,6 +154,7 @@
                 }
 
                 &__suggest {
+                    /*! Sökförslagen */
                     width: 100%;
                     position: absolute;
                     background-color: $white;
@@ -213,6 +220,7 @@
                 }
 
                 input[type=search] {
+                    /*! Inputfältet */
                     width: 85%;
                     padding: 1rem 1.5rem;
                     border: none;
@@ -225,6 +233,7 @@
                 }
 
                 .searchbtn {
+                    /*! Sökknappen */
                     cursor: pointer;
                     position: relative;
                     width: 15%;
@@ -255,6 +264,7 @@
             }
 
             &--basket {
+                /*! Ikonerna för varukorgen och önskelistsan */
                 width: 120px;
                 height: 90px;
                 display: flex;
@@ -321,6 +331,7 @@
                 }
 
                 .minibasket, .wishlist {
+                    /*! Minivarukorgen och lilla önskelistan */
                     display: none;
                     z-index: 20;
                     position: absolute;
@@ -505,6 +516,7 @@
                 }
 
                 .wishlist {
+                    /*! Lilla önskelistan */
                     display: none;
                     left: -150%;
                     background-color: $white;
@@ -660,6 +672,7 @@
     }
 
     .gallery {
+        /*! Bildgalleri */
         width: 100%;
         min-height: 60vh;
         height: 340px;

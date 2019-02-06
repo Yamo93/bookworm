@@ -1,3 +1,4 @@
+/*! Modal för bilderna */
 .modal {
     display: none;
     // display: block;
@@ -6,7 +7,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 45vw;
+    width: 65vw;
     height: 90vh;
     padding: 4rem 8rem;
     padding-top: 8rem;
@@ -66,6 +67,7 @@
 }
 
 .backdrop {
+    /*! Skuggan som syns under modalen och dropdown-menyn */
     // display: block;
     display: none;
     z-index: 5;

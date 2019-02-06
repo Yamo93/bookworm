@@ -1,16 +1,16 @@
 // Variabler för DOM-elementen
 const elements = {
-    backdrop: document.querySelector('.backdrop'), 
-    closeModal: document.querySelector('.closemodal'), 
-    singleProd: document.querySelector('.singleprod'), 
-    basketIcon: document.querySelector('.basket_icon'), 
-    miniBasket: document.querySelector('.minibasket'), 
-    wishlist: document.querySelector('.wishlist'), 
-    wishlistIcon: document.querySelector('.wishlist_icon'), 
-    modal: document.querySelector('.modal'), 
-    modalPic: document.querySelector('.modal__pic'), 
-    basketLeft: document.querySelector('.basket__left'), 
-    productsCollection: document.querySelector('.products__collection'), 
+    backdrop: document.querySelector('.backdrop'),
+    closeModal: document.querySelector('.closemodal'),
+    singleProd: document.querySelector('.singleprod'),
+    basketIcon: document.querySelector('.basket_icon'),
+    miniBasket: document.querySelector('.minibasket'),
+    wishlist: document.querySelector('.wishlist'),
+    wishlistIcon: document.querySelector('.wishlist_icon'),
+    modal: document.querySelector('.modal'),
+    modalPic: document.querySelector('.modal__pic'),
+    basketLeft: document.querySelector('.basket__left'),
+    productsCollection: document.querySelector('.products__collection'),
     alertBar: document.querySelector('.alert_bar')
 };
 
@@ -117,59 +117,59 @@ let moms = 10;
 
 let books = {
     book1: {
-        id: 1, 
-        title: 'Introduction to the Design and Analysis of Algorithms', 
-        author: 'Anany Levitin', 
-        price: 149, 
-        pages: 562, 
-        weight: 323, 
+        id: 1,
+        title: 'Introduction to the Design and Analysis of Algorithms',
+        author: 'Anany Levitin',
+        price: 149,
+        pages: 562,
+        weight: 323,
         imgURL: 'background-image: url(../img/products/book1_front.png)'
-    }, 
+    },
     book2: {
-        id: 2, 
-        title: 'Introducing Data Structures with Java', 
-        author: 'David Cousins', 
-        price: 159, 
-        pages: 393, 
-        weight: 323, 
+        id: 2,
+        title: 'Introducing Data Structures with Java',
+        author: 'David Cousins',
+        price: 159,
+        pages: 393,
+        weight: 323,
         imgURL: 'background-image: url(../img/products/book2_front.png)'
-    }, 
+    },
     book3: {
-        id: 3, 
-        title: 'An Introduction to Object-Oriented Programming with Java', 
-        author: 'C. Thomas Wu', 
-        price: 169, 
-        pages: 983, 
-        weight: 523, 
+        id: 3,
+        title: 'An Introduction to Object-Oriented Programming with Java',
+        author: 'C. Thomas Wu',
+        price: 169,
+        pages: 983,
+        weight: 523,
         imgURL: 'background-image: url(../img/products/book3_front.png)'
-    }, 
+    },
     book4: {
-        id: 4, 
-        title: 'The C Programming Language', 
-        author: 'B. Kernighan och D. Ritchie', 
-        price: 179, 
-        pages: 272, 
-        weight: 193, 
+        id: 4,
+        title: 'The C Programming Language',
+        author: 'B. Kernighan och D. Ritchie',
+        price: 179,
+        pages: 272,
+        weight: 193,
         imgURL: 'background-image: url(../img/products/book4_front.png)'
-    }, 
+    },
     book5: {
-        id: 5, 
-        title: 'Concepts of Programming Languages', 
-        author: 'Anany Levitin', 
-        price: 179, 
-        pages: 809, 
-        weight: 463, 
+        id: 5,
+        title: 'Concepts of Programming Languages',
+        author: 'Anany Levitin',
+        price: 179,
+        pages: 809,
+        weight: 463,
         imgURL: 'background-image: url(../img/products/book5_front.png)'
-    }, 
+    },
     book6: {
-        id: 6, 
-        title: 'Python Programming - An Introduction to Computer Science', 
-        author: 'John Zelle', 
-        price: 189, 
-        pages: 514, 
-        weight: 363, 
+        id: 6,
+        title: 'Python Programming - An Introduction to Computer Science',
+        author: 'John Zelle',
+        price: 189,
+        pages: 514,
+        weight: 363,
         imgURL: 'background-image: url(../img/products/book6_front.png)'
-    }, 
+    },
 };
 
 let booksArray = Object.values(books);
@@ -282,12 +282,12 @@ function readMore(e) {
 // Visar de olika sidorna av boken
 function switchBookSide() {
     let reversedSide = null;
-    
+
     // Loopar igenom böckerna, testar sida
     function checkSide(side) {
         side === 'front' ? reversedSide = 'back' : reversedSide = 'front';
 
-    for (let i = 1; i <= booksArray.length; i++) {
+        for (let i = 1; i <= booksArray.length; i++) {
             if (currentShownImage === `pic${i}`) {
                 elements.modalPic.style.backgroundImage = `url(./img/products/book${i}_${reversedSide}.png)`;
             }
@@ -304,18 +304,18 @@ let countBooksLeft = booksArray.length;
 // Funktion för att flytta runt på produktsektionen
 function switchSlideBook(e) {
     if (e.target.classList.contains('rarr')) {
-            if (currentSlideBook < booksArray.length) {
-                countBooksRight = currentSlideBook + 1;
-            } else if (currentSlideBook === booksArray.length) {
-                countBooksRight = 1;
-            }
+        if (currentSlideBook < booksArray.length) {
+            countBooksRight = currentSlideBook + 1;
+        } else if (currentSlideBook === booksArray.length) {
+            countBooksRight = 1;
+        }
 
-            for (let i = 1; i < 5; i++) {
-                document.querySelector(`.prodplace${i}`).innerHTML = createTemplate(countBooksRight);
-                countBooksRight < booksArray.length ? countBooksRight++ : countBooksRight = 1;
-            }
+        for (let i = 1; i < 5; i++) {
+            document.querySelector(`.prodplace${i}`).innerHTML = createTemplate(countBooksRight);
+            countBooksRight < booksArray.length ? countBooksRight++ : countBooksRight = 1;
+        }
 
-            currentSlideBook < booksArray.length ? currentSlideBook++ : currentSlideBook = 1;
+        currentSlideBook < booksArray.length ? currentSlideBook++ : currentSlideBook = 1;
     } else if (e.target.classList.contains('larr')) {
         if (currentSlideBook === 1) {
             countBooksLeft = booksArray.length;
@@ -337,61 +337,61 @@ if (document.querySelector('.gallery')) {
     let wrapper = document.querySelector('.slide');
     let items = document.querySelectorAll('.show').length;
     let count = 1;
-    
+
     let next = document.querySelector('.gallery__rarr');
     let prev = document.querySelector('.gallery__larr');
-    
+
     next.addEventListener('click', nextSlide);
 
-function nextSlide() {
+    function nextSlide() {
 
-    if (count === 1) {
-        document.querySelector('.switch2').classList.add('active');
-        document.querySelector('.switch1').classList.remove('active');
-    } else if (count === 2) {
-        document.querySelector('.switch3').classList.add('active');
-        document.querySelector('.switch2').classList.remove('active');
-    }  else if (count === 3) {
-        document.querySelector('.switch1').classList.add('active');
-        document.querySelector('.switch3').classList.remove('active');
+        if (count === 1) {
+            document.querySelector('.switch2').classList.add('active');
+            document.querySelector('.switch1').classList.remove('active');
+        } else if (count === 2) {
+            document.querySelector('.switch3').classList.add('active');
+            document.querySelector('.switch2').classList.remove('active');
+        } else if (count === 3) {
+            document.querySelector('.switch1').classList.add('active');
+            document.querySelector('.switch3').classList.remove('active');
+        }
+
+
+        if (count < items) {
+            wrapper.style.left = '-' + count * containerWidth + 'px';
+            count++;
+        } else if (count === items) {
+            wrapper.style.left = '0px';
+            count = 1;
+        }
+
     }
 
+    prev.addEventListener('click', prevSlide);
 
-    if (count < items) {
-        wrapper.style.left = '-' + count * containerWidth + 'px';
-        count++;
-    } else if (count === items) {
-        wrapper.style.left = '0px';
-        count = 1;
+    function prevSlide() {
+        if (count === 1) {
+            document.querySelector('.switch3').classList.add('active');
+            document.querySelector('.switch1').classList.remove('active');
+        } else if (count === 2) {
+            document.querySelector('.switch1').classList.add('active');
+            document.querySelector('.switch2').classList.remove('active');
+        } else if (count === 3) {
+            document.querySelector('.switch2').classList.add('active');
+            document.querySelector('.switch3').classList.remove('active');
+        }
+
+
+        if (count > 1) {
+            count = count - 2;
+            wrapper.style.left = '-' + count * containerWidth + 'px';
+            count++;
+        } else if (count === 1) {
+            count = items - 1;
+            wrapper.style.left = '-' + count * containerWidth + 'px';
+            count++;
+        }
     }
-
-}
-
-prev.addEventListener('click', prevSlide);
-
-function prevSlide() {
-    if (count === 1) {
-        document.querySelector('.switch3').classList.add('active');
-        document.querySelector('.switch1').classList.remove('active');
-    } else if (count === 2) {
-        document.querySelector('.switch1').classList.add('active');
-        document.querySelector('.switch2').classList.remove('active');
-    }  else if (count === 3) {
-        document.querySelector('.switch2').classList.add('active');
-        document.querySelector('.switch3').classList.remove('active');
-    }
-
-
-    if (count > 1) {
-        count = count - 2;
-        wrapper.style.left = '-' + count * containerWidth + 'px';
-        count++;
-    } else if (count === 1) {
-        count = items - 1;
-        wrapper.style.left = '-' + count * containerWidth + 'px';
-        count++;
-    }
-}
 }
 
 
@@ -400,7 +400,7 @@ function loadBasket() {
     storage = JSON.parse(localStorage.getItem('basket')) || [];
 
     // Skapar en tom korg initialt
-if (elements.basketLeft) {
+    if (elements.basketLeft) {
         elements.basketLeft.innerHTML = `<div class="basket__left-topbar">
         <h3 class="basket__left-topbar--proddesc">Produktbeskrivning</h3>
         <h3 class="basket__left-topbar--quantity">Antal</h3>
@@ -426,8 +426,8 @@ if (elements.basketLeft) {
                 <p class="book__remove" data-id=${item.id}>&times; TA BORT</p>
                 </div>
                 `;
-    
-                let loadedBigBook = `
+
+            let loadedBigBook = `
                 <div class="product">
                 <div class="basket__left-info">
                     <div class="basket__left-info--desc">
@@ -442,23 +442,23 @@ if (elements.basketLeft) {
                 <div class="basket__left-book">
                     <div class="basket__left-book--img" style="${item.imgURL}"></div>
                     <div class="basket__left-book--details">
-                        <p class="basket__left-book--details---skick"><span>Skick:</span> Väldigt bra</p>
-                        <p class="basket__left-book--details---format"><span>Format:</span> Hardback</p>
-                        <p class="basket__left-book--details---sidor"><span>Antal sidor:</span> ${item.pages}</p>
-                        <p class="basket__left-book--details---vikt"><span>Vikt:</span> ${item.weight} gram</p>
-                        <p class="basket__left-book--details---datum"><span>Publiceringsdatum:</span> 2018-10-16</p>
+                        <p class="skick"><span>Skick:</span> Väldigt bra</p>
+                        <p class="format"><span>Format:</span> Hardback</p>
+                        <p class="sidor"><span>Antal sidor:</span> ${item.pages}</p>
+                        <p class="vikt"><span>Vikt:</span> ${item.weight} gram</p>
+                        <p class="datum"><span>Publiceringsdatum:</span> 2018-10-16</p>
                         <p class="basket__left-book--details---desc"><span>Kort beskrivning:</span> En fantastisk, underhållande bok som har sålts i stora antal världen runt om... <a href="./book${item.id}.html"><span class="readmore">Läs mer</span></a></p>
                         <p class="delete_from_basket" data-id="${item.id}">&times; Ta bort</p>
                     </div>
                 </div>
             </div>
                 `;
-    
-                document.querySelector('.minibasket__books').insertAdjacentHTML('beforeend', loadedMiniBook);
-    
-                if (elements.basketLeft) {
-                    elements.basketLeft.insertAdjacentHTML('beforeend', loadedBigBook);
-                }
+
+            document.querySelector('.minibasket__books').insertAdjacentHTML('beforeend', loadedMiniBook);
+
+            if (elements.basketLeft) {
+                elements.basketLeft.insertAdjacentHTML('beforeend', loadedBigBook);
+            }
         });
 
         elements.basketIcon.dataset.items = storage.length;
@@ -505,7 +505,7 @@ function loadWishlist() {
 
     if (wishlist) {
         wishlist.forEach(item => {
-                let loadedMiniBook = `
+            let loadedMiniBook = `
                 <div class="wishlist__books-book">
                 <div class="wishlist__books-book--img" style="${item.imgURL}"></div>
                 <div class="wishlist__books-book--desc">
@@ -517,7 +517,7 @@ function loadWishlist() {
             </div>
                 `;
 
-                let loadedBigBook = `
+            let loadedBigBook = `
                 <div class="product">
                     <div class="wishlistpage__area-info">
                         <div class="wishlistpage__area-info--desc">
@@ -532,23 +532,23 @@ function loadWishlist() {
                     <div class="wishlistpage__area-book">
                         <div class="wishlistpage__area-book--img" style="${item.imgURL}"></div>
                         <div class="wishlistpage__area-book--details">
-                            <p class="wishlistpage__area-book--details---skick"><span>Skick:</span> Väldigt bra</p>
-                            <p class="wishlistpage__area-book--details---format"><span>Format:</span> Hardback</p>
-                            <p class="wishlistpage__area-book--details---sidor"><span>Antal sidor:</span> ${item.pages}</p>
-                            <p class="wishlistpage__area-book--details---vikt"><span>Vikt:</span> ${item.weight} gram</p>
-                            <p class="wishlistpage__area-book--details---datum"><span>Publiceringsdatum:</span> 2018-10-16</p>
+                            <p class="skick"><span>Skick:</span> Väldigt bra</p>
+                            <p class="format"><span>Format:</span> Hardback</p>
+                            <p class="sidor"><span>Antal sidor:</span> ${item.pages}</p>
+                            <p class="vikt"><span>Vikt:</span> ${item.weight} gram</p>
+                            <p class="datum"><span>Publiceringsdatum:</span> 2018-10-16</p>
                             <p class="wishlistpage__area-book--details---desc"><span>Kort beskrivning:</span> En fantastisk, underhållande bok som har sålts i stora antal världen runt om... <a href="./book${item.id}.html"><span class="readmore">Läs mer</span></a></p>
                             <p class="add_to_basket" data-id="book${item.id}">Lägg till i varukorgen</p>
                         </div>
                     </div>
                 </div>
                 `;
-    
-                document.querySelector('.wishlist__books').insertAdjacentHTML('beforeend', loadedMiniBook);
-    
-                if (document.querySelector('.wishlistpage__area')) {
-                    document.querySelector('.wishlistpage__area').insertAdjacentHTML('beforeend', loadedBigBook);
-                }
+
+            document.querySelector('.wishlist__books').insertAdjacentHTML('beforeend', loadedMiniBook);
+
+            if (document.querySelector('.wishlistpage__area')) {
+                document.querySelector('.wishlistpage__area').insertAdjacentHTML('beforeend', loadedBigBook);
+            }
         });
 
         elements.wishlistIcon.dataset.wished = wishlist.length;
@@ -561,7 +561,7 @@ function updateSum() {
     sum = 0;
     storage.forEach(item => {
         sum += item.price;
-        
+
     })
 
     if (sum === 0) moms = 0;
@@ -582,12 +582,12 @@ function addItemToBasket(e) {
     if (e.target.matches('.product__basketbtn')) {
         pushBook(e.target.id);
         showAlert();
-    } 
+    }
     if (e.target.matches('.singleprod__main-right--buttons---checkout')) {
         pushBook(e.target.id);
         showAlert();
     }
-    
+
     if (e.target.matches('.add_to_basket')) {
         pushBook(e.target.dataset.id);
         showAlert();
@@ -624,8 +624,8 @@ function addItemToBasket(e) {
             elements.alertBar.classList.remove('danger_alert');
             elements.alertBar.classList.add('success_alert');
             elements.alertBar.innerHTML = `Boken <span>"${books[bookID].title}"</span> har lagts till din varukorg!`;
-            
-            setTimeout(function() {
+
+            setTimeout(function () {
                 elements.alertBar.classList.remove('display_alert');
             }, 5000);
         }
@@ -635,8 +635,7 @@ function addItemToBasket(e) {
 
     elements.basketIcon.dataset.items = storage.length;
 
-    function showAlert() {
-    }
+    function showAlert() {}
 
 }
 
@@ -657,18 +656,17 @@ function removeItemFromBasket(e) {
         elements.alertBar.classList.remove('success_alert');
         elements.alertBar.classList.add('danger_alert');
         elements.alertBar.innerHTML = `Boken <span>"${books['book' + e.target.dataset.id].title}"</span> har tagits bort från din varukorg!`;
-        
-        setTimeout(function() {
+
+        setTimeout(function () {
             elements.alertBar.classList.remove('display_alert');
         }, 5000);
-    }
-    else if (e.target.matches('.delete_from_basket')) {
+    } else if (e.target.matches('.delete_from_basket')) {
         elements.basketLeft.innerHTML = `<div class="basket__left-topbar">
         <h3 class="basket__left-topbar--proddesc">Produktbeskrivning</h3>
         <h3 class="basket__left-topbar--quantity">Antal</h3>
         <h3 class="basket__left-topbar--total">Totalt</h3>
     </div>`;
-    document.querySelector('.minibasket__books').innerHTML = '';
+        document.querySelector('.minibasket__books').innerHTML = '';
     } else if (e.target.matches('.book__remove')) {
 
         if (elements.basketLeft) {
@@ -723,7 +721,7 @@ function lookSearchResults() {
         }
 
         localStorage.setItem('searchquery', JSON.stringify(this.value));
-    
+
     });
 
     // Om sökfältet är tomt
@@ -737,8 +735,8 @@ function lookSearchResults() {
 function clickSingleResult(e) {
 
     if (e.target.matches('.search__suggest, .search__suggest *')) {
-        window.location.href = `http://${window.location.hostname}:${window.location.port}/book${e.target.dataset.id}.html`; // utvecklingsläge
-        // window.location.href = `http://studenter.miun.se/~yage1800/dt163g/webbshop/book${e.target.dataset.id}.html`; // produktionsläge
+        // window.location.href = `http://${window.location.hostname}:${window.location.port}/book${e.target.dataset.id}.html`; // utvecklingsläge
+        window.location.href = `http://studenter.miun.se/~yage1800/dt163g/webbshop/book${e.target.dataset.id}.html`; // produktionsläge
     }
 }
 
@@ -746,8 +744,8 @@ function clickSingleResult(e) {
 function showResultsPage(e) {
 
     if (e.keyCode == 13 || e.type === 'click') {
-        window.location.href = `http://${window.location.hostname}:${window.location.port}/results.html` || ''; // utvecklingsläge
-        // window.location.href = `http://studenter.miun.se/~yage1800/dt163g/webbshop/book${e.target.dataset.id}.html`; // produktionsläge
+        // window.location.href = `http://${window.location.hostname}:${window.location.port}/results.html` || ''; // utvecklingsläge
+        window.location.href = `http://studenter.miun.se/~yage1800/dt163g/webbshop/book${e.target.dataset.id}.html`; // produktionsläge
     }
 }
 
@@ -774,11 +772,11 @@ function loadSearchResults() {
             <div class="results__area-book">
                 <div class="results__area-book--img" style="${result.imgURL}"></div>
                 <div class="results__area-book--details">
-                    <p class="results__area-book--details---skick"><span>Skick:</span> Väldigt bra</p>
-                    <p class="results__area-book--details---format"><span>Format:</span> Hardback</p>
-                    <p class="results__area-book--details---sidor"><span>Antal sidor:</span> ${result.pages}</p>
-                    <p class="results__area-book--details---vikt"><span>Vikt:</span> ${result.weight} gram</p>
-                    <p class="results__area-book--details---datum"><span>Publiceringsdatum:</span> 2018-10-16</p>
+                    <p class="skick"><span>Skick:</span> Väldigt bra</p>
+                    <p class="format"><span>Format:</span> Hardback</p>
+                    <p class="sidor"><span>Antal sidor:</span> ${result.pages}</p>
+                    <p class="vikt"><span>Vikt:</span> ${result.weight} gram</p>
+                    <p class="datum"><span>Publiceringsdatum:</span> 2018-10-16</p>
                     <p class="results__area-book--details---desc"><span>Kort beskrivning:</span> En fantastisk, underhållande bok som har sålts i stora antal världen runt om... <a href="./book${result.id}.html"><span class="readmore">Läs mer</span></a></p>
                     <p class="add_to_basket" data-id="book${result.id}">Lägg till i varukorgen</p>
                     <p class="add_to_wishlist" data-id="book${result.id}">Lägg till i önskelista ❤️</p>
@@ -832,8 +830,8 @@ function addItemToWishlist(e) {
             elements.alertBar.classList.remove('danger_alert');
             elements.alertBar.classList.add('success_alert');
             elements.alertBar.innerHTML = `Boken <span>"${books[bookID].title}"</span> har lagts till din önskelista! ❤`;
-            
-            setTimeout(function() {
+
+            setTimeout(function () {
                 elements.alertBar.classList.remove('display_alert');
             }, 5000);
         }
